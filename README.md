@@ -1,1 +1,1 @@
-# tabpipes-book
+# d2l-book-deploy-demo
