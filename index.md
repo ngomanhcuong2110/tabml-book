@@ -10,4 +10,5 @@ Machine Learning cho dữ liệu dạng bảng:ư
 :maxdepth: 1
 
 intro
+sample
 ```
