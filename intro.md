@@ -1,5 +1,4 @@
 ## Giới thiệu
-;
 ## Python
 ```{.python .input}
 print("hello")
@@ -12,31 +11,10 @@ print(6 + 8)
 |   1  | 2   |
 
 ## Công thức toán
-machine learning cho dữ liệu dạng bảng
 
 
-$$ \mathbf{A} = \begin{bmatrix} 2 & 0 \ 0 & -1 \end{bmatrix}. $$
 
-### Mô hình Tuyến tính
-
-
-<!--
-The linearity assumption just says that the target (price) can be expressed as a weighted sum of the features (area and age):
--->
-
-Giả định tuyến tính trên cho thấy rằng mục tiêu (giá nhà) có thể được biểu diễn bởi tổng có trọng số của các đặc trưng (diện tích và tuổi đời):
-
-$$\mathrm{giá nhà} = w_{\mathrm{\textrm{diện_tích}}} \cdot \mathrm{\textrm{diện_tích}} + w_{\mathrm{\textrm{tuổi_đời}}} \cdot \mathrm{\textrm{tuổi_đời}} + b.$$
-
-<!--
-Here, $w_{\mathrm{area}}$ and $w_{\mathrm{age}}$ are called *weights*, and $b$ is called a *bias* (also called an *offset* or *intercept*).
-The weights determine the influence of each feature on our prediction and the bias just says what value the predicted price should take when all of the features take value $0$.
-Even if we will never see any homes with zero area, or that are precisely zero years old, we still need the intercept or else we will limit the expressivity of our linear model.
--->
-
-Ở đây, $w_{\mathrm{\textrm{diện_tích}}}$ và $w_{\mathrm{\textrm{tuổi_đời}}}$ được gọi là các *trọng số*, và $b$ được gọi là *hệ số điều chỉnh* (còn được gọi là *độ dời*).
-Các trọng số xác định mức độ đóng góp của mỗi đặc trưng tới đầu ra, còn hệ số điều chỉnh là dự đoán của giá nhà khi tất cả các đặc trưng đều bằng $0$.
-Ngay cả khi không bao giờ có một ngôi nhà có diện tích hoặc tuổi đời bằng không, ta vẫn cần sử dụng hệ số điều chỉnh; nếu không khả năng biểu diễn của mô hình tuyến tính sẽ bị suy giảm.
+ads
 
 <!--
 Given a dataset, our goal is to choose the weights $w$ and bias $b$ such that on average, the predictions made according our model best fit the true prices observed in the data.
