@@ -9,6 +9,6 @@ Machine Learning cho dữ liệu dạng bảng:ư
 ```toc
 :maxdepth: 1
 
-intro
 sample
+sample2
 ```
