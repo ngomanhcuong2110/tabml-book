@@ -1,3 +1,0 @@
-[console_scripts]
-tabtool = tabtool.main:main
-
