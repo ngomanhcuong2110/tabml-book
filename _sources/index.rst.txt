@@ -1,0 +1,14 @@
+
+Machine Learning cho dữ liệu dạng bảng:ư
+========================================
+
+
+
+.. raw:: html
+   :file: frontpage.html
+
+.. toctree::
+   :maxdepth: 1
+
+   sample
+   sample2
