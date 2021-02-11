@@ -1,5 +1,5 @@
-# D2L-Book: A Toolkit for Hands-on Books
+This is a modification of [d2l-book](https://book.d2l.ai).
 
-This package helps you build and publish **a book with Python code**, or
-**Python package documents with tutorials**. The document site is available at
-https://book.d2l.ai
+This folder provides a tool for building and deploying materials for the book *Machine
+Learning for tabular data* in Vietnamese at
+https://machinelearningcoban.com/tabml-book/.
