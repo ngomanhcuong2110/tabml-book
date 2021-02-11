@@ -41,4 +41,4 @@ cd ${REPO_DIR}
 git config --global push.default simple
 git add -f --all .
 git diff-index --quiet HEAD || git commit -am "Version $3"
-git push -f origin master:main
+git push -f origin master:deploy
