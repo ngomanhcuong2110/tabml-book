@@ -8,6 +8,7 @@ Machine Learning cho dữ liệu dạng bảng
 
 ```toc
 :maxdepth: 1
+:numbered:
 
 sample
 sample2
