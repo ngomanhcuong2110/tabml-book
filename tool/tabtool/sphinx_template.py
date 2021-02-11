@@ -24,7 +24,7 @@ linkcheck_ignore = [r'.*localhost.*']
 linkcheck_timeout = 5
 linkcheck_workers = 20
 
-html_theme = 'mxtheme'
+html_theme = 'sphinx_book_theme'
 html_theme_options = {
     'primary_color': 'blue',
     'accent_color': 'deep_orange',
