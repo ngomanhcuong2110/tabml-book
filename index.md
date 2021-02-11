@@ -1,4 +1,4 @@
-Machine Learning cho dữ liệu dạng bảng:ư
+Machine Learning cho dữ liệu dạng bảng
 ========================
 
 ```eval_rst
