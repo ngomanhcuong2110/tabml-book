@@ -1,0 +1,1053 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu &#8212; Machine Learning cho dữ liệu dạng bảng  documentation</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.da26317cf37e5c4af2fa3e6253912353.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo-bw.png" class="logo" alt="logo">
+  
+  
+  <h3 class="site-logo" id="site-title">Machine Learning cho dữ liệu dạng bảng</h3>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sample.html">
+   1. Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sample.html#hoi-quy-tuyen-tinh">
+   2. Hồi quy Tuyến tính
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sample2.html">
+   3. Các Thành phần Cơ bản của Hồi quy Tuyến tính
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<hr>
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Giới thiệu
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bang">
+   Bảng
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cong-thuc-toan">
+   Công thức toán
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ham-mat-mat">
+     Hàm mất mát
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nghiem-theo-cong-thuc">
+     Nghiệm theo Công thức
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ha-gradient">
+     Hạ Gradient
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#du-doan-bang-mo-hinh-da-duoc-huan-luyen">
+     Dự đoán bằng Mô hình đã được Huấn luyện
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vector-hoa-de-tang-toc-do-tinh-toan">
+     Vector hóa để tăng Tốc độ Tính toán
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phan-phoi-chuan-va-ham-mat-mat-binh-phuong">
+   Phân phối Chuẩn và Hàm mất mát Bình phương
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tu-hoi-quy-tuyen-tinh-toi-mang-hoc-sau">
+   Từ Hồi quy Tuyến tính tới Mạng Học sâu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gian-do-mang-no-ron">
+     Giản đồ Mạng Nơ-ron
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sinh-vat-hoc">
+     Sinh vật học
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tom-tat">
+   Tóm tắt
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bai-tap">
+   Bài tập
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thao-luan">
+   Thảo luận
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nhung-nguoi-thuc-hien">
+   Những người thực hiện
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="gioi-thieu">
+<h1>Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="python">
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bang">
+<h1>Bảng<a class="headerlink" href="#bang" title="Permalink to this headline">¶</a></h1>
+<table class="table">
+<colgroup>
+<col style="width: 75%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>STT</p></th>
+<th class="head"><p>b</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cong-thuc-toan">
+<h1>Công thức toán<a class="headerlink" href="#cong-thuc-toan" title="Permalink to this headline">¶</a></h1>
+<p>ads</p>
+<!--
+Given a dataset, our goal is to choose the weights $w$ and bias $b$ such that on average, the predictions made according our model best fit the true prices observed in the data.
+--><p>Cho một tập dữ liệu, mục đích của chúng ta là chọn được các trọng số
+<span class="math notranslate nohighlight">\(w\)</span> và hệ số điều chỉnh <span class="math notranslate nohighlight">\(b\)</span> sao cho dự đoán của mô hình khớp
+nhất với giá nhà thực tế quan sát được trong dữ liệu.</p>
+<!--
+In disciplines where it is common to focus on datasets with just a few features, explicitly expressing models long-form like this is common.
+In ML, we usually work with high-dimensional datasets, so it is more convenient to employ linear algebra notation. When our inputs consist of $d$ features, we express our prediction $\hat{y}$ as
+--><p>Trong các bài toán mà tập dữ liệu thường chỉ có một vài đặc trưng, biễu
+diễn tường minh mô hình ở dạng biểu thức dài như trên khá là phổ biến.
+Trong học máy, chúng ta thường làm việc với các tập dữ liệu nhiều chiều,
+vì vậy sẽ tốt hơn nếu ta tận dụng các ký hiệu trong đại số tuyến tính.
+Khi đầu vào của mô hình có <span class="math notranslate nohighlight">\(d\)</span> đặc trưng, ta biễu diễn dự đoán
+<span class="math notranslate nohighlight">\(\hat{y}\)</span> bởi</p>
+<div class="math notranslate nohighlight" id="equation-intro-0">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-0" title="Permalink to this equation">¶</a></span>\[\hat{y} = w_1 \cdot x_1 + ... + w_d \cdot x_d + b.\]</div>
+<!--
+Collecting all features into a vector $\mathbf{x}$ and all weights into a vector $\mathbf{w}$, we can express our model compactly using a dot product:
+--><p>Thu thập toàn bộ các đặc trưng vào một vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> và toàn
+bộ các trọng số vào một vector <span class="math notranslate nohighlight">\(\mathbf{w}\)</span>, ta có thể biễu diễn
+mô hình một cách gọn gàng bằng tích vô hướng:</p>
+<div class="math notranslate nohighlight" id="equation-intro-1">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-1" title="Permalink to this equation">¶</a></span>\[\hat{y} = \mathbf{w}^T \mathbf{x} + b.\]</div>
+<!-- ===================== Kết thúc dịch Phần 3 ===================== --><!-- ===================== Bắt đầu dịch Phần 4 ===================== --><!--
+Here, the vector $\mathbf{x}$ corresponds to a single data point.
+We will often find it convenient to refer to our entire dataset via the *design matrix* $X$.
+Here, $X$ contains one row for every example and one column for every feature.
+--><p>Ở đây, vector <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> tương ứng với một điểm dữ liệu. Chúng
+ta sẽ thấy rằng việc truy cập đến toàn bộ tập dữ liệu sẽ tiện hơn nếu ta
+biểu diễn tập dữ liệu bằng <em>ma trận</em> <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>. Mỗi hàng của ma
+trận <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> thể hiện một mẫu và mỗi cột thể hiện một đặc
+trưng.</p>
+<!--
+For a collection of data points $\mathbf{X}$, the predictions $\hat{\mathbf{y}}$ can be expressed via the matrix-vector product:
+--><p>Với một tập hợp điểm dữ liệu <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>, kết quả dự đoán
+<span class="math notranslate nohighlight">\(\hat{\mathbf{y}}\)</span> có thể được biểu diễn bằng phép nhân giữa ma
+trận và vector:</p>
+<div class="math notranslate nohighlight" id="equation-intro-2">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-2" title="Permalink to this equation">¶</a></span>\[{\hat{\mathbf{y}}} = \mathbf X \mathbf{w} + b.\]</div>
+<!--
+Given a training dataset $X$ and corresponding (known) targets $\mathbf{y}$,
+the goal of linear regression is to find the *weight* vector $w$ and bias term $b$ that given some a new data point $\mathbf{x}_i$,
+sampled from the same distribution as the training data will (in expectation) predict the target $y_i$ with the lowest error.
+--><p>Cho một tập dữ liệu huấn luyện <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> và các giá trị mục
+tiêu đã biết trước <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, mục tiêu của hồi quy tuyến tính
+là tìm vector <em>trọng số</em> <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> và hệ số điều chỉnh
+<span class="math notranslate nohighlight">\(b\)</span> sao cho với một điểm dữ liệu mới <span class="math notranslate nohighlight">\(\mathbf{x}_i\)</span> được lấy
+mẫu từ cùng phân phối của tập huấn luyện, giá trị mục tiêu <span class="math notranslate nohighlight">\(y_i\)</span>
+sẽ được dự đoán với sai số nhỏ nhất (theo kỳ vọng).</p>
+<!--
+Even if we believe that the best model for predicting $y$ given  $\mathbf{x}$ is linear,
+we would not expect to find real-world data where $y_i$ exactly equals $\mathbf{w}^T \mathbf{x}+b$ for all points ($\mathbf{x}, y)$.
+For example, whatever instruments we use to observe the features $X$ and labels $\mathbf{y}$ might suffer small amount of measurement error.
+Thus, even when we are confident that the underlying relationship is linear, we will incorporate a noise term to account for such errors.
+--><p>Kể cả khi biết rằng mô hình tuyến tính là lựa chọn tốt nhất để dự đoán
+<span class="math notranslate nohighlight">\(y\)</span> từ <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, chúng ta cũng không kỳ vọng tìm được dữ
+liệu thực tế mà ở đó <span class="math notranslate nohighlight">\(y\)</span> đúng bằng
+<span class="math notranslate nohighlight">\(\mathbf{w}^T \mathbf{x}+b\)</span> với mọi điểm (<span class="math notranslate nohighlight">\(\mathbf{x}, y)\)</span>.
+Để dễ hình dung, mọi thiết bị đo lường dùng để quan sát đặc trưng
+<span class="math notranslate nohighlight">\(\mathbf{X}\)</span> và nhãn <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> đều có sai số nhất định.
+Chính vì vậy, kể cả khi ta chắc chắn rằng mối quan hệ ẩn sau tập dữ liệu
+là tuyến tính, chúng ta sẽ thêm một thành phần nhiễu để giải thích các
+sai số đó.</p>
+<!--
+Before we can go about searching for the best parameters $w$ and $b$, we will need two more things:
+(i) a quality measure for some given model; and (ii) a procedure for updating the model to improve its quality.
+--><p>Trước khi tiến hành tìm các giá trị tốt nhất cho <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> và
+<span class="math notranslate nohighlight">\(b\)</span>, chúng ta sẽ cần thêm hai thứ nữa: (i) một phép đo đánh giá
+chất lượng mô hình và (ii) quy trình cập nhật mô hình để cải thiện chất
+lượng.</p>
+<!-- ===================== Kết thúc dịch Phần 4 ===================== --><!-- ===================== Bắt đầu dịch Phần 5 ===================== --><!-- ========================================= REVISE PHẦN 2 - KẾT THÚC ===================================--><!-- ========================================= REVISE PHẦN 3 - BẮT ĐẦU ===================================--><!--
+### Loss Function
+--><div class="section" id="ham-mat-mat">
+<h2>Hàm mất mát<a class="headerlink" href="#ham-mat-mat" title="Permalink to this headline">¶</a></h2>
+<!--
+Before we start thinking about how *to fit* our model, we need to determine a measure of *fitness*.
+The *loss function* quantifies the distance between the *real* and *predicted* value of the target.
+The loss will usually be a non-negative number where smaller values are better and perfect predictions incur a loss of $0$.
+The most popular loss function in regression problems is the sum of squared errors.
+When our prediction for some example $i$ is $\hat{y}^{(i)}$ and the corresponding true label is $y^{(i)}$, the squared error is given by:
+--><p>Trước khi suy nghĩ về việc làm thế nào để <em>khớp</em> mô hình với dữ liệu, ta
+cần phải xác định một phương pháp để đo <em>mức độ khớp</em>. <em>Hàm mất mát</em>
+định lượng khoảng cách giữa giá trị <em>thực</em> và giá trị <em>dự đoán</em> của mục
+tiêu. Độ mất mát thường là một số không âm và có giá trị càng nhỏ càng
+tốt. Khi các dự đoán hoàn hảo, chúng sẽ có độ mất mát sẽ bằng <span class="math notranslate nohighlight">\(0\)</span>.
+Hàm mất mát thông dụng nhất trong các bài toán hồi quy là hàm tổng bình
+phương các lỗi. Khi giá trị dự đoán của một điểm dữ liệu huấn luyện
+<span class="math notranslate nohighlight">\(i\)</span> là <span class="math notranslate nohighlight">\(\hat{y}^{(i)}\)</span> và nhãn tương ứng là <span class="math notranslate nohighlight">\(y^{(i)}\)</span>,
+bình phương của lỗi được xác định như sau:</p>
+<div class="math notranslate nohighlight" id="equation-intro-3">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-3" title="Permalink to this equation">¶</a></span>\[l^{(i)}(\mathbf{w}, b) = \frac{1}{2} \left(\hat{y}^{(i)} - y^{(i)}\right)^2.\]</div>
+<!--
+The constant $1/2$ makes no real difference but will prove notationally convenient, cancelling out when we take the derivative of the loss.
+Since the training dataset is given to us, and thus out of our control, the empirical error is only a function of the model parameters.
+To make things more concrete, consider the example below where we plot a regression problem for a one-dimensional case as shown in :numref:`fig_fit_linreg`.
+--><p>Hằng số <span class="math notranslate nohighlight">\(1/2\)</span> không tạo ra sự khác biệt thực sự nào nhưng sẽ giúp
+ký hiệu thuận tiện hơn: nó sẽ được triệt tiêu khi lấy đạo hàm của hàm
+mất mát. Vì các dữ liệu trong tập huấn luyện đã được xác định trước và
+không thể thay đổi, sai số thực nghiệm chỉ là một hàm của các tham số mô
+hình. Để tìm hiểu cụ thể hơn, hãy xét ví dụ dưới đây về một bài toán hồi
+quy cho trường hợp một chiều trong <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_fit_linreg</span></code>.</p>
+<!--
+![Fit data with a linear model.](../img/fit_linreg.svg)
+--><div class="figure align-default" id="id2">
+<span id="fig-fit-linreg"></span><img alt="../img/fit_linreg.svg" src="../img/fit_linreg.svg" /><p class="caption"><span class="caption-text">Khớp dữ liệu với một mô hình tuyến tính.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<!--
+Note that large differences between estimates $\hat{y}^{(i)}$ and observations $y^{(i)}$ lead to even larger contributions to the loss, due to the quadratic dependence.
+To measure the quality of a model on the entire dataset, we simply average (or equivalently, sum) the losses on the training set.
+--><p>Lưu ý rằng khi hiệu giữa giá trị ước lượng <span class="math notranslate nohighlight">\(\hat{y}^{(i)}\)</span> và giá
+trị quan sát <span class="math notranslate nohighlight">\(y^{(i)}\)</span> lớn, giá trị hàm mất mát sẽ tăng một lượng
+còn lớn hơn thế do sự phụ thuộc bậc hai. Để đo chất lượng của mô hình
+trên toàn bộ tập dữ liệu, ta đơn thuần lấy trung bình (hay tương đương
+là lấy tổng) các giá trị mất mát của từng mẫu trong tập huấn luyện.</p>
+<div class="math notranslate nohighlight" id="equation-intro-4">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-4" title="Permalink to this equation">¶</a></span>\[L(\mathbf{w}, b) =\frac{1}{n}\sum_{i=1}^n l^{(i)}(\mathbf{w}, b) =\frac{1}{n} \sum_{i=1}^n \frac{1}{2}\left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right)^2.\]</div>
+<!--
+When training the model, we want to find parameters ($\mathbf{w}^*, b^*$) that minimize the total loss across all training samples:
+--><p>Khi huấn luyện mô hình, ta muốn tìm các tham số
+(<span class="math notranslate nohighlight">\(\mathbf{w}^*, b^*\)</span>) sao cho tổng độ mất mát trên toàn bộ các mẫu
+huấn luyện được cực tiểu hóa:</p>
+<div class="math notranslate nohighlight" id="equation-intro-5">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-5" title="Permalink to this equation">¶</a></span>\[\mathbf{w}^*, b^* = \operatorname*{argmin}_{\mathbf{w}, b}\  L(\mathbf{w}, b).\]</div>
+<!-- ===================== Kết thúc dịch Phần 5 ===================== --><!-- ===================== Bắt đầu dịch Phần 6 ===================== --><!-- ========================================= REVISE PHẦN 3 - KẾT THÚC ===================================--><!-- ========================================= REVISE PHẦN 4 - BẮT ĐẦU ===================================--><!--
+### Analytic Solution
+--></div>
+<div class="section" id="nghiem-theo-cong-thuc">
+<h2>Nghiệm theo Công thức<a class="headerlink" href="#nghiem-theo-cong-thuc" title="Permalink to this headline">¶</a></h2>
+<!--
+Linear regression happens to be an unusually simple optimization problem.
+Unlike most other models that we will encounter in this book, linear regression can be solved analytically by applying a simple formula, yielding a global optimum.
+To start, we can subsume the bias $b$ into the parameter $\mathbf{w}$ by appending a column to the design matrix consisting of all $1s$.
+Then our prediction problem is to minimize $||\mathbf{y} - X\mathbf{w}||$.
+Because this expression has a quadratic form, it is convex, and so long as the problem is not degenerate (our features are linearly independent), it is strictly convex.
+--><p>Hóa ra hồi quy tuyến tính chỉ là một bài toán tối ưu hóa đơn giản. Khác
+với hầu hết các mô hình được giới thiệu trong cuốn sách này, hồi quy
+tuyến tính có thể được giải bằng cách áp dụng một công thức đơn giản,
+cho một nghiệm tối ưu toàn cục. Để bắt đầu, chúng ta có thể gộp hệ số
+điều chỉnh <span class="math notranslate nohighlight">\(b\)</span> vào tham số <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> bằng cách thêm một
+cột toàn <span class="math notranslate nohighlight">\(1\)</span> vào ma trận dữ liệu. Khi đó bài toán dự đoán trở
+thành bài toán cực tiểu hóa <span class="math notranslate nohighlight">\(||\mathbf{y} - X\mathbf{w}||\)</span>. Bởi vì
+biểu thức này có dạng toàn phương, nó là một hàm số lồi, và miễn là bài
+toán này không suy biến (các đặc trưng độc lập tuyến tính), nó là một
+hàm số lồi chặt.</p>
+<!--
+Thus there is just one critical point on the loss surface and it corresponds to the global minimum.
+Taking the derivative of the loss with respect to $\mathbf{w}$ and setting it equal to $0$ yields the analytic solution:
+--><p>Bởi vậy chỉ có một điểm cực trị trên mặt mất mát và nó tương ứng với giá
+trị mất mát nhỏ nhất. Lấy đạo hàm của hàm mất mát theo
+<span class="math notranslate nohighlight">\(\mathbf{w}\)</span> và giải phương trình đạo hàm này bằng <span class="math notranslate nohighlight">\(0\)</span>, ta
+sẽ được nghiệm theo công thức:</p>
+<div class="math notranslate nohighlight" id="equation-intro-6">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-6" title="Permalink to this equation">¶</a></span>\[\mathbf{w}^* = (\mathbf X^T \mathbf X)^{-1}\mathbf X^T y.\]</div>
+<!--
+While simple problems like linear regression may admit analytic solutions, you should not get used to such good fortune.
+Although analytic solutions allow for nice mathematical analysis, the requirement of an analytic solution is so restrictive that it would exclude all of deep learning.
+--><p>Tuy những bài toán đơn giản như hồi quy tuyến tính có thể có nghiệm theo
+công thức, bạn không nên làm quen với sự may mắn này. Mặc dù các nghiệm
+theo công thức giúp ta phân tích toán học một cách thuận tiện, các điều
+kiện để có được nghiệm này chặt chẽ đến nỗi không có phương pháp học sâu
+nào thoả mãn được.</p>
+<!-- ===================== Kết thúc dịch Phần 6 ===================== --><!-- ===================== Bắt đầu dịch Phần 7 ===================== --><!--
+### Gradient descent
+--></div>
+<div class="section" id="ha-gradient">
+<h2>Hạ Gradient<a class="headerlink" href="#ha-gradient" title="Permalink to this headline">¶</a></h2>
+<!--
+Even in cases where we cannot solve the models analytically, and even when the loss surfaces are high-dimensional and nonconvex, it turns out that we can still train models effectively in practice.
+Moreover, for many tasks, these difficult-to-optimize models turn out to be so much better that figuring out how to train them ends up being well worth the trouble.
+--><p>Trong nhiều trường hợp ở đó ta không thể giải quyết các mô hình theo
+phép phân tích, và thậm chí khi mặt mất mát là các mặt bậc cao và không
+lồi, trên thực tế ta vẫn có thể huấn luyện các mô hình này một cách hiệu
+quả. Hơn nữa, trong nhiều tác vụ, những mô hình khó để tối ưu hóa này
+hoá ra lại tốt hơn các phương pháp khác nhiều, vậy nên việc bỏ công sức
+để tìm cách tối ưu chúng là hoàn toàn xứng đáng.</p>
+<!--
+The key technique for optimizing nearly any deep learning model, and which we will call upon throughout this book,
+consists of iteratively reducing the error by updating the parameters in the direction that incrementally lowers the loss function.
+This algorithm is called *gradient descent*.
+On convex loss surfaces, it will eventually converge to a global minimum, and while the same cannot be said for nonconvex surfaces,
+it will at least lead towards a (hopefully good) local minimum.
+--><p>Kỹ thuật chính để tối ưu hóa gần như bất kỳ mô hình học sâu nào, sẽ được
+sử dụng xuyên suốt cuốn sách này, bao gồm việc giảm thiểu lỗi qua các
+vòng lặp bằng cách cập nhật tham số theo hướng làm giảm dần hàm mất mát.
+Thuật toán này được gọi là <em>hạ gradient</em>. Trên các mặt mất mát lồi, giá
+trị mất mát cuối cùng sẽ hội tụ về giá trị nhỏ nhất. Tuy điều tương tự
+không thể áp dụng cho các mặt không lồi, ít nhất thuật toán sẽ dẫn tới
+một cực tiểu (hy vọng là tốt).</p>
+<!--
+The most naive application of gradient descent consists of taking the derivative of the true loss, which is an average of the losses computed on every single example in the dataset.
+In practice, this can be extremely slow.
+We must pass over the entire dataset before making a single update.
+Thus, we will often settle for sampling a random minibatch of examples every time we need to computer the update, a variant called *stochastic gradient descent*.
+--><p>Ứng dụng đơn giản nhất của hạ gradient bao gồm việc tính đạo hàm của hàm
+mất mát, tức trung bình của các giá trị mất mát được tính trên mỗi mẫu
+của tập dữ liệu. Trong thực tế, việc này có thể cực kì chậm. Chúng ta
+phải duyệt qua toàn bộ tập dữ liệu trước khi thực hiện một lần cập nhật.
+Vì thế, thường ta chỉ muốn lấy một minibatch ngẫu nhiên các mẫu mỗi khi
+ta cần tính bước cập nhật. Phương pháp biến thể này được gọi là <em>hạ
+gradient ngẫu nhiên</em>.</p>
+<!-- ===================== Kết thúc dịch Phần 7 ===================== --><!-- ===================== Bắt đầu dịch Phần 8 ===================== --><!-- ========================================= REVISE PHẦN 4 - KẾT THÚC ===================================--><!-- ========================================= REVISE PHẦN 5 - BẮT ĐẦU ===================================--><!--
+In each iteration, we first randomly sample a minibatch $\mathcal{B}$ consisting of a fixed number of training data examples.
+We then compute the derivative (gradient) of the average loss on the mini batch with regard to the model parameters.
+Finally, we multiply the gradient by a predetermined step size $\eta > 0$ and subtract the resulting term from the current parameter values.
+--><p>Trong mỗi vòng lặp, đầu tiên chúng ta lấy ngẫu nhiên một minibatch
+<span class="math notranslate nohighlight">\(\mathcal{B}\)</span> dữ liệu huấn luyện với kích thước cố định. Sau đó,
+chúng ta tính đạo hàm (gradient) của hàm mất mát trên minibatch đó theo
+các tham số của mô hình. Cuối cùng, gradient này được nhân với tốc độ
+học <span class="math notranslate nohighlight">\(\eta &gt; 0\)</span> và kết quả này được trừ đi từ các giá trị tham số
+hiện tại.</p>
+<!--
+We can express the update mathematically as follows ($\partial$ denotes the partial derivative) :
+--><p>Chúng ta có thể biểu diễn việc cập nhật bằng công thức toán như sau
+(<span class="math notranslate nohighlight">\(\partial\)</span> là ký hiệu đạo hàm riêng của hàm số) :</p>
+<div class="math notranslate nohighlight" id="equation-intro-7">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-7" title="Permalink to this equation">¶</a></span>\[(\mathbf{w},b) \leftarrow (\mathbf{w},b) - \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \partial_{(\mathbf{w},b)} l^{(i)}(\mathbf{w},b).\]</div>
+<!--
+To summarize, steps of the algorithm are the following:
+(i) we initialize the values of the model parameters, typically at random;
+(ii) we iteratively sample random batches from the the data (many times), updating the parameters in the direction of the negative gradient.
+--><p>Tổng kết lại, các bước của thuật toán như sau: (i) khởi tạo các giá trị
+tham số của mô hình, thường thì sẽ được chọn ngẫu nhiên. (ii) tại mỗi
+vòng lặp, ta lấy ngẫu nhiên từng batch từ tập dữ liệu (nhiều lần), rồi
+tiến hành cập nhật các tham số của mô hình theo hướng ngược với
+gradient.</p>
+<!--
+For quadratic losses and linear functions, we can write this out explicitly as follows:
+Note that $\mathbf{w}$ and $\mathbf{x}$ are vectors.
+Here, the more elegant vector notation makes the math much more readable than expressing things in terms of coefficients, say $w_1, w_2, \ldots, w_d$.
+--><p>Khi sử dụng hàm mất mát bậc hai và mô hình tuyến tính, chúng ta có thể
+biểu diễn bước này một cách tường minh như sau: Lưu ý rằng
+<span class="math notranslate nohighlight">\(\mathbf{w}\)</span> và <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> là các vector. Ở đây, việc ký
+hiệu bằng các vector giúp công thức dễ đọc hơn nhiều so với việc biểu
+diễn bằng các hệ số như <span class="math notranslate nohighlight">\(w_1, w_2, \ldots, w_d\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-intro-8">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-8" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{aligned}
+\mathbf{w} &amp;\leftarrow \mathbf{w} -   \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \partial_{\mathbf{w}} l^{(i)}(\mathbf{w}, b) &amp;&amp; =
+\mathbf{w} - \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \mathbf{x}^{(i)} \left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right),\\
+b &amp;\leftarrow b -  \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \partial_b l^{(i)}(\mathbf{w}, b)  &amp;&amp; =
+b - \frac{\eta}{|\mathcal{B}|} \sum_{i \in \mathcal{B}} \left(\mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)}\right).
+\end{aligned}\end{split}\]</div>
+<!-- ===================== Kết thúc dịch Phần 8 ===================== --><!-- ===================== Bắt đầu dịch Phần 9 ===================== --><!--
+In the above equation, $|\mathcal{B}|$ represents the number of examples in each minibatch (the *batch size*) and $\eta$ denotes the *learning rate*.
+We emphasize that the values of the batch size and learning rate are manually pre-specified and not typically learned through model training.
+These parameters that are tunable but not updated in the training loop are called *hyper-parameters*.
+*Hyperparameter tuning* is the process by which these are chosen, and typically requires that we adjust the hyperparameters based on the results of the inner (training) loop as assessed on a separate *validation* split of the data.
+--><p>Trong phương trình trên, <span class="math notranslate nohighlight">\(|\mathcal{B}|\)</span> là số ví dụ trong mỗi
+minibatch (<em>kích thước batch</em>) và <span class="math notranslate nohighlight">\(\eta\)</span> là <em>tốc độ học</em>. Cũng cần
+phải nhấn mạnh rằng các giá trị của kích thước batch và tốc độ học được
+lựa chọn trước một cách thủ công và thường không được học thông qua quá
+trình huấn luyện mô hình. Các tham số này tuy điều chỉnh được nhưng
+không được cập nhật trong vòng huấn luyện, và được gọi là <em>siêu tham
+số</em>. <em>Điều chỉnh siêu tham số</em> là quá trình lựa chọn chúng, thường dựa
+trên kết quả của vòng lặp huấn luyện được đánh giá trên một tập <em>kiểm
+định</em> riêng biệt.</p>
+<!--
+After training for some predetermined number of iterations (or until some other stopping criteria is met),
+we record the estimated model parameters, denoted $\hat{\mathbf{w}}, \hat{b}$ (in general the "hat" symbol denotes estimates).
+Note that even if our function is truly linear and noiseless, these parameters will not be the exact minimizers of the loss because,
+although the algorithm converges slowly towards a local minimum it cannot achieve it exactly in a finite number of steps.
+--><p>Sau khi huấn luyện đủ số vòng lặp được xác định trước (hoặc đạt được một
+tiêu chí dừng khác), ta sẽ ghi lại các tham số mô hình đã được ước
+lượng, ký hiệu là <span class="math notranslate nohighlight">\(\hat{\mathbf{w}}, \hat{b}\)</span> (ký hiệu “mũ” thường
+thể hiện các giá trị ước lượng). Lưu ý rằng ngay cả khi hàm số thực sự
+tuyến tính và không có nhiễu, các tham số này sẽ không cực tiểu hóa được
+hàm mất mát. Mặc dù thuật toán dần dần hội tụ đến một điểm cực tiểu, nó
+vẫn không thể tới chính xác được cực tiểu đó với số bước hữu hạn.</p>
+<!--
+Linear regression happens to be a convex learning problem, and thus there is only one (global) minimum.
+However, for more complicated models, like deep networks, the loss surfaces contain many minima.
+Fortunately, for reasons that are not yet fully understood, deep learning practitioners seldom struggle to find parameters that minimize the loss *on training data*.
+The more formidable task is to find parameters that will achieve low loss on data that we have not seen before, a challenge called *generalization*.
+We return to these topics throughout the book.
+--><p>Hồi quy tuyến tính thực ra là một bài toán tối ưu lồi, do đó chỉ có một
+cực tiểu (toàn cục). Tuy nhiên, đối với các mô hình phức tạp hơn, như
+mạng sâu, mặt của hàm mất mát sẽ có nhiều cực tiểu. May mắn thay, vì một
+lý do nào đó mà những người làm về học sâu hiếm khi phải vật lộn để tìm
+ra các tham số cực tiểu hóa hàm mất mát <em>trên dữ liệu huấn luyện</em>. Nhiệm
+vụ khó khăn hơn là tìm ra các tham số dẫn đến giá trị mất mát thấp trên
+dữ liệu mà mô hình chưa từng thấy trước đây, một thử thách được gọi là
+<em>sự khái quát hóa</em>. Chúng ta sẽ gặp lại chủ đề này xuyên suốt cuốn sách.</p>
+<!-- ===================== Kết thúc dịch Phần 9 ===================== --><!-- ===================== Bắt đầu dịch Phần 10 ===================== --><!-- ========================================= REVISE PHẦN 5 - KẾT THÚC ===================================--><!-- ========================================= REVISE PHẦN 6 - BẮT ĐẦU ===================================--><!--
+### Making Predictions with the Learned Model
+--></div>
+<div class="section" id="du-doan-bang-mo-hinh-da-duoc-huan-luyen">
+<h2>Dự đoán bằng Mô hình đã được Huấn luyện<a class="headerlink" href="#du-doan-bang-mo-hinh-da-duoc-huan-luyen" title="Permalink to this headline">¶</a></h2>
+<!--
+Given the learned linear regression model $\hat{\mathbf{w}}^\top x + \hat{b}$,
+we can now estimate the price of a new house (not contained in the training data) given its area $x_1$ and age (year) $x_2$.
+Estimating targets given features is commonly called *prediction* and *inference*.
+--><p>Với mô hình hồi quy tuyến tính đã được huấn luyện
+<span class="math notranslate nohighlight">\(\hat{\mathbf{w}}^\top x + \hat{b}\)</span>, ta có thể ước lượng giá của
+một căn nhà mới (ngoài bộ dữ liệu dùng để huấn luyện) với diện tích
+<span class="math notranslate nohighlight">\(x_1\)</span> và tuổi đời <span class="math notranslate nohighlight">\(x_2\)</span> của nó. Việc ước lượng mục tiêu khi
+biết trước những đặc trưng thường được gọi là <em>dự đoán</em> hay <em>suy luận</em>
+(<em>inference</em>).</p>
+<!--
+We will try to stick with *prediction* because calling this step *inference*, despite emerging as standard jargon in deep learning, is somewhat of a misnomer.
+In statistics, *inference* more often denotes estimating parameters based on a dataset.
+This misuse of terminology is a common source of confusion when deep learning practitioners talk to statisticians.
+--><p>Ở đây ta sẽ dùng từ <em>dự đoán</em> thay vì <em>suy luận</em>, dù <em>suy luận</em> là một
+thuật ngữ khá phổ biến trong học sâu, áp dụng thuật ngữ này ở đây lại
+không phù hợp. Trong thống kê, <em>suy luận</em> thường được dùng cho việc ước
+lượng thông số dựa trên tập dữ liệu. Việc dùng sai thuật ngữ này là
+nguyên nhân gây ra sự hiểu nhầm giữa những người làm học sâu và các nhà
+thống kê.</p>
+<!-- ===================== Kết thúc dịch Phần 10 ===================== --><!-- ===================== Bắt đầu dịch Phần 11 ===================== --><!--
+### Vectorization for Speed
+--></div>
+<div class="section" id="vector-hoa-de-tang-toc-do-tinh-toan">
+<h2>Vector hóa để tăng Tốc độ Tính toán<a class="headerlink" href="#vector-hoa-de-tang-toc-do-tinh-toan" title="Permalink to this headline">¶</a></h2>
+<!--
+When training our models, we typically want to process whole minibatches of examples simultaneously.
+Doing this efficiently requires that we vectorize the calculations and leverage fast linear algebra libraries rather than writing costly for-loops in Python.
+--><p>Khi huấn luyện mô hình, chúng ta thường muốn xử lý đồng thời các mẫu dữ
+liệu trong minibatch. Để làm được điều này một cách hiệu quả, chúng ta
+phải vector hóa việc tính toán bằng cách sử dụng các thư viện đại số
+tuyến tính thay vì sử dụng các vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> trong Python.</p>
+<!--
+To illustrate why this matters so much, we can consider two methods for adding vectors.
+To start we instantiate two $10000$-dimensional vectors containing all ones.
+In one method we will loop over the vectors with a Python `for` loop.
+In the other method we will rely on a single call to `np`.
+--><p>Chúng ta sẽ sử dụng hai phương pháp cộng vector dưới đây để hiểu được
+tại sao vector hóa là cần thiết trong học máy. Đầu tiên, ta khởi tạo hai
+vector <span class="math notranslate nohighlight">\(10000\)</span> chiều chứa toàn giá trị một. Chúng ta sẽ sử dụng
+vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> trong Python ở phương pháp thứ nhất và một hàm trong
+thư viện <code class="docutils literal notranslate"><span class="pre">np</span></code> ở phương pháp thứ hai.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">d2l</span> <span class="kn">import</span> <span class="n">mxnet</span> <span class="k">as</span> <span class="n">d2l</span>
+<span class="kn">from</span> <span class="nn">mxnet</span> <span class="kn">import</span> <span class="n">np</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<!--
+Since we will benchmark the running time frequently in this book, let's define a timer (hereafter accessed via the `d2l` package to track the running time.
+--><p>Vì ta sẽ cần đánh giá xếp hạng thời gian xử lý một cách thường xuyên
+trong cuốn sách này, ta sẽ định nghĩa một bộ tính giờ (sau đó có thể
+truy cập được thông qua gói <code class="docutils literal notranslate"><span class="pre">d2l</span></code> để theo dõi thời gian chạy).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Saved in the d2l package for later use</span>
+<span class="k">class</span> <span class="nc">Timer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Record multiple running times.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">times</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Start the timer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Stop the timer and record the time in a list</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">avg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Return the average time</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Return the sum of time</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">cumsum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Return the accumuated times</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">times</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+<!--
+Now we can benchmark the workloads.
+First, we add them, one coordinate at a time, using a `for` loop.
+--><p>Bây giờ, ta có thể đánh giá xếp hạng hai phương pháp cộng vector. Đầu
+tiên, ta sử dụng vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> để cộng các tọa độ tương ứng.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="s1">&#39;</span><span class="si">%.5f</span><span class="s1"> sec&#39;</span> <span class="o">%</span> <span class="n">timer</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<!--
+Alternatively, we rely on `np` to compute the elementwise sum:
+--><p>Trong phương pháp hai, ta dựa vào thư viện <code class="docutils literal notranslate"><span class="pre">np</span></code> để tính tổng hai
+vector theo từng phần tử.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="s1">&#39;</span><span class="si">%.5f</span><span class="s1"> sec&#39;</span> <span class="o">%</span> <span class="n">timer</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+</div>
+<!--
+You probably noticed that the second method is dramatically faster than the first.
+Vectorizing code often yields order-of-magnitude speedups.
+Moreover, we push more of the math to the library and need not write as many calculations ourselves, reducing the potential for errors.
+--><p>Bạn có thể nhận thấy rằng, phương pháp thứ hai nhanh hơn rất nhiều lần
+so với phương pháp thứ nhất. Việc vector hóa thường tăng tốc độ tính
+toán lên nhiều bậc. Ngoài ra, giao phó công việc tính toán cho thư viện
+để tránh phải tự viết lại sẽ giảm thiểu khả năng phát sinh lỗi.</p>
+<!-- ===================== Kết thúc dịch Phần 11 ===================== --><!-- ===================== Bắt đầu dịch Phần 12 ===================== --><!-- ========================================= REVISE PHẦN 6 - KẾT THÚC ===================================--><!-- ========================================= REVISE PHẦN 7 - BẮT ĐẦU ===================================--><!--
+## The Normal Distribution and Squared Loss
+--></div>
+</div>
+<div class="section" id="phan-phoi-chuan-va-ham-mat-mat-binh-phuong">
+<h1>Phân phối Chuẩn và Hàm mất mát Bình phương<a class="headerlink" href="#phan-phoi-chuan-va-ham-mat-mat-binh-phuong" title="Permalink to this headline">¶</a></h1>
+<!--
+While you can already get your hands dirty using only the information above, in the following section we can more formally motivate the square loss objective via assumptions about the distribution of noise.
+--><p>Mặc dù bạn đã có thể thực hành với kiến thức được trình bày phía trên,
+trong phần tiếp theo chúng ta sẽ làm rõ hơn nguồn gốc của hàm mất mát
+bình phương thông qua các giả định về phân phối của nhiễu.</p>
+<!--
+Recall from the above that the squared loss $l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$ has many convenient properties.
+These include a simple derivative $\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)$.
+--><p>Nhắc lại ở trên rằng hàm mất mát bình phương
+<span class="math notranslate nohighlight">\(l(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2\)</span> có nhiều thuộc tính
+tiện lợi. Việc nó có đạo hàm đơn giản
+<span class="math notranslate nohighlight">\(\partial_{\hat{y}} l(y, \hat{y}) = (\hat{y} - y)\)</span> là một trong số
+đó.</p>
+<!--
+As we mentioned earlier, linear regression was invented by Gauss in 1795, who also discovered the normal distribution (also called the *Gaussian*).
+It turns out that the connection between the normal distribution and linear regression runs deeper than common parentage.
+To refresh your memory, the probability density of a normal distribution with mean $\mu$ and variance $\sigma^2$ is given as follows:
+--><p>Như được đề cập trước đó, hồi quy tuyến tính được phát minh bởi Gauss
+vào năm 1795. Ông cũng là người khám phá ra phân phối chuẩn (còn được
+gọi là <em>phân phối Gauss</em>). Hóa ra là mối liên hệ giữa phân phối chuẩn và
+hồi quy tuyến tính không chỉ dừng lại ở việc chúng có chung cha đẻ. Để
+gợi nhớ lại cho bạn, mật độ xác suất của phân phối chuẩn với trung bình
+<span class="math notranslate nohighlight">\(\mu\)</span> và phương sai <span class="math notranslate nohighlight">\(\sigma^2\)</span> được cho bởi:</p>
+<div class="math notranslate nohighlight" id="equation-intro-9">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-9" title="Permalink to this equation">¶</a></span>\[p(z) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (z - \mu)^2\right).\]</div>
+<!--
+Below we define a Python function to compute the normal distribution.
+--><p>Dưới đây ta định nghĩa một hàm Python để tính toán phân phối chuẩn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">normal</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">/</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<!--
+We can now visualize the normal distributions.
+--><p>Giờ ta có thể trực quan hóa các phân phối chuẩn.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mean and variance pairs</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">d2l</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="n">normal</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span> <span class="k">for</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">],</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
+         <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;p(z)&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span>
+         <span class="n">legend</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mean </span><span class="si">%d</span><span class="s1">, var </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span> <span class="k">for</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">])</span>
+</pre></div>
+</div>
+<!-- ===================== Kết thúc dịch Phần 12 ===================== --><!-- ===================== Bắt đầu dịch Phần 13 ===================== --><!--
+As you can see, changing the mean corresponds to a shift along the *x axis*, and increasing the variance spreads the distribution out, lowering its peak.
+--><p>Có thể thấy rằng, thay đổi giá trị trung bình tương ứng với việc dịch
+chuyển phân phối dọc theo <em>trục x</em>, tăng giá trị phương sai sẽ trải rộng
+phân phối và hạ thấp đỉnh của nó.</p>
+<!--
+One way to motivate linear regression with the mean squared error loss function is to formally assume that observations arise from noisy observations, where the noise is normally distributed as follows
+--><p>Để thấy rõ hơn mối quan hệ giữa hồi quy tuyến tính và hàm mất mát trung
+bình bình phương sai số (MSE), ta có thể giả định rằng các quan sát bắt
+nguồn từ những quan sát nhiễu, và giá trị nhiễu này tuân theo phân phối
+chuẩn như sau:</p>
+<div class="math notranslate nohighlight" id="equation-intro-10">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-10" title="Permalink to this equation">¶</a></span>\[y = \mathbf{w}^\top \mathbf{x} + b + \epsilon \text{ tại } \epsilon \sim \mathcal{N}(0, \sigma^2).\]</div>
+<!--
+Thus, we can now write out the *likelihood* of seeing a particular $y$ for a given $\mathbf{x}$ via
+--><p>Do đó, chúng ta có thể viết <em>khả năng</em> thu được một giá trị cụ thể của
+<span class="math notranslate nohighlight">\(y\)</span> khi biết trước <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> là</p>
+<div class="math notranslate nohighlight" id="equation-intro-11">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-11" title="Permalink to this equation">¶</a></span>\[p(y|\mathbf{x}) = \frac{1}{\sqrt{2 \pi \sigma^2}} \exp\left(-\frac{1}{2 \sigma^2} (y - \mathbf{w}^\top \mathbf{x} - b)^2\right).\]</div>
+<!--
+Now, according to the *maximum likelihood principle*, the best values of $b$ and $\mathbf{w}$ are those that maximize the *likelihood* of the entire dataset:
+--><p>Dựa vào <em>nguyên lý hợp lý cực đại</em>, giá trị tốt nhất của <span class="math notranslate nohighlight">\(b\)</span> và
+<span class="math notranslate nohighlight">\(\mathbf{w}\)</span> là những giá trị giúp cực đại hóa <em>sự hợp lý</em> của
+toàn bộ tập dữ liệu:</p>
+<div class="math notranslate nohighlight" id="equation-intro-12">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-12" title="Permalink to this equation">¶</a></span>\[P(Y\mid X) = \prod_{i=1}^{n} p(y^{(i)}|\mathbf{x}^{(i)}).\]</div>
+<!--
+Estimators chosen according to the *maximum likelihood principle* are called *Maximum Likelihood Estimators* (MLE).
+While, maximizing the product of many exponential functions, might look difficult, we can simplify things significantly, without changing the objective, by maximizing the log of the likelihood instead.
+For historical reasons, optimizations are more often expressed as minimization rather than maximization.
+So, without changing anything we can minimize the *Negative Log-Likelihood (NLL)* $-\log p(\mathbf y|\mathbf X)$.
+Working out the math gives us:
+--><p>Bộ ước lượng được chọn theo <em>nguyên lý hợp lý cực đại</em> được gọi là <em>bộ
+ước lượng hợp lý cực đại</em> (<em>Maximum Likelihood Estimators</em> – MLE). Dù
+việc cực đại hóa tích của nhiều hàm mũ trông có vẻ khó khăn, chúng ta có
+thể khiến mọi thứ đơn giản hơn nhiều mà không làm thay đổi mục tiêu ban
+đầu bằng cách cực đại hóa log của hàm hợp lý. Vì lý do lịch sử, các bài
+toán tối ưu thường được biểu diễn dưới dạng bài toán cực tiểu hóa thay
+vì cực đại hóa. Do đó chúng ta có thể cực tiểu hóa <em>hàm đối log hợp lý</em>
+(<em>Negative Log-Likelihood - NLL</em>) <span class="math notranslate nohighlight">\(-\log p(\mathbf y|\mathbf X)\)</span>
+mà không cần thay đổi gì thêm. Kết nối các công thức trên, ta có:</p>
+<div class="math notranslate nohighlight" id="equation-intro-13">
+<span class="eqno">()<a class="headerlink" href="#equation-intro-13" title="Permalink to this equation">¶</a></span>\[-\log p(\mathbf y|\mathbf X) = \sum_{i=1}^n \frac{1}{2} \log(2 \pi \sigma^2) + \frac{1}{2 \sigma^2} \left(y^{(i)} - \mathbf{w}^\top \mathbf{x}^{(i)} - b\right)^2.\]</div>
+<!-- ===================== Kết thúc dịch Phần 13 ===================== --><!-- ===================== Bắt đầu dịch Phần 14 ===================== --><!--
+Now we just need one more assumption: that $\sigma$ is some fixed constant.
+Thus we can ignore the first term because it does not depend on $\mathbf{w}$ or $b$.
+Now the second term is identical to the squared error objective introduced earlier, but for the multiplicative constant $\frac{1}{\sigma^2}$.
+Fortunately, the solution does not depend on $\sigma$.
+It follows that minimizing squared error is equivalent to maximum likelihood estimation of a linear model under the assumption of additive Gaussian noise.
+--><p>Giờ ta chỉ cần thêm một giả định nữa: <span class="math notranslate nohighlight">\(\sigma\)</span> là một hằng số cố
+định. Do đó, ta có thể bỏ qua số hạng đầu tiên bởi nó không phụ thuộc
+vào <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> hoặc <span class="math notranslate nohighlight">\(b\)</span>. Còn số hạng thứ hai thì giống hệt
+hàm bình phương sai số đã được giới thiệu ở trên, nhưng được nhân thêm
+với hằng số <span class="math notranslate nohighlight">\(\frac{1}{\sigma^2}\)</span>. May mắn thay, nghiệm không phụ
+thuộc vào <span class="math notranslate nohighlight">\(\sigma\)</span>. Điều này dẫn tới việc cực tiểu hóa bình phương
+sai số tương đương với việc ước lượng hợp lý cực đại cho mô hình tuyến
+tính dưới giả định có nhiễu cộng Gauss.</p>
+<!-- ========================================= REVISE PHẦN 7 - KẾT THÚC ===================================--><!-- ========================================= REVISE PHẦN 8 - BẮT ĐẦU ===================================--><!--
+## From Linear Regression to Deep Networks
+--></div>
+<div class="section" id="tu-hoi-quy-tuyen-tinh-toi-mang-hoc-sau">
+<h1>Từ Hồi quy Tuyến tính tới Mạng Học sâu<a class="headerlink" href="#tu-hoi-quy-tuyen-tinh-toi-mang-hoc-sau" title="Permalink to this headline">¶</a></h1>
+<!--
+So far we only talked about linear functions.
+While neural networks cover a much richer family of models, we can begin thinking of the linear model as a neural network by expressing it the language of neural networks.
+To begin, let's start by rewriting things in a 'layer' notation.
+--><p>Cho đến nay, chúng ta mới chỉ đề cập về các hàm tuyến tính. Trong khi
+mạng nơ-ron có thể xấp xỉ rất nhiều họ mô hình, ta có thể bắt đầu coi mô
+hình tuyến tính như một mạng nơ-ron và biểu diễn nó theo ngôn ngữ của
+mạng nơ-ron. Để bắt đầu, hãy cùng viết lại mọi thứ theo ký hiệu ‘tầng’
+(<em>layer</em>).</p>
+<!-- ===================== Kết thúc dịch Phần 14 ===================== --><!-- ===================== Bắt đầu dịch Phần 15 ===================== --><!--
+### Neural Network Diagram
+--><div class="section" id="gian-do-mang-no-ron">
+<h2>Giản đồ Mạng Nơ-ron<a class="headerlink" href="#gian-do-mang-no-ron" title="Permalink to this headline">¶</a></h2>
+<!--
+Deep learning practitioners like to draw diagrams to visualize what is happening in their models.
+In :numref:`fig_single_neuron`, we depict our linear model as a neural network.
+Note that these diagrams indicate the connectivity pattern (here, each input is connected to the output) but not the values taken by the weights or biases.
+--><p>Những người làm học sâu thích vẽ giản đồ để trực quan hóa những gì đang
+xảy ra trong mô hình của họ. Trong <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_single_neuron</span></code>, mô
+hình tuyến tính được minh họa như một mạng nơ-ron. Những giản đồ này chỉ
+ra cách kết nối (ở đây, mỗi đầu vào được kết nối tới đầu ra) nhưng không
+có giá trị của các trọng số và các hệ số điều chỉnh.</p>
+<!--
+![Linear regression is a single-layer neural network. ](../img/singleneuron.svg)
+--><div class="figure align-default" id="id3">
+<span id="fig-single-neuron"></span><img alt="../img/singleneuron.svg" src="../img/singleneuron.svg" /><p class="caption"><span class="caption-text">Hồi quy tuyến tính là một mạng nơ-ron đơn tầng.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<!--
+Because there is just a single computed neuron (node) in the graph (the input values are not computed but given),
+we can think of linear models as neural networks consisting of just a single artificial neuron.
+Since for this model, every input is connected to every output (in this case there is only one output!),
+we can regard this transformation as a *fully-connected layer*, also commonly called a *dense layer*.
+We will talk a lot more about networks composed of such layers in the next chapter on multilayer perceptrons.
+--><p>Vì chỉ có một nơ-ron tính toán (một nút) trong đồ thị (các giá trị đầu
+vào không cần tính mà được cho trước), chúng ta có thể coi mô hình tuyến
+tính như mạng nơ-ron với chỉ một nơ-ron nhân tạo duy nhất. Với mô hình
+này, mọi đầu vào đều được kết nối tới mọi đầu ra (trong trường hợp này
+chỉ có một đầu ra!), ta có thể coi phép biến đổi này là một <em>tầng kết
+nối đầy đủ</em>, hay còn gọi là <em>tầng kết nối dày đặc</em>. Chúng ta sẽ nói
+nhiều hơn về các mạng nơ-ron cấu tạo từ những tầng như vậy trong chương
+kế tiếp về mạng perceptron đa tầng.</p>
+<!-- ===================== Kết thúc dịch Phần 15 ===================== --><!-- ===================== Bắt đầu dịch Phần 16 ===================== --><!-- ========================================= REVISE PHẦN 8 - KẾT THÚC ===================================--><!-- ========================================= REVISE PHẦN 9 - BẮT ĐẦU ===================================--><!--
+### Biology
+--></div>
+<div class="section" id="sinh-vat-hoc">
+<h2>Sinh vật học<a class="headerlink" href="#sinh-vat-hoc" title="Permalink to this headline">¶</a></h2>
+<!--
+Although linear regression (invented in 1795) predates computational neuroscience, so it might seem anachronistic to describe linear regression as a neural network.
+To see why linear models were a natural place to begin when the cyberneticists/neurophysiologists Warren McCulloch and Walter Pitts looked when they began to develop models of artificial neurons,
+consider the cartoonish picture of a biological neuron in :numref:`fig_Neuron`,
+consisting of *dendrites* (input terminals), the *nucleus* (CPU), the *axon* (output wire),
+and the *axon terminals* (output terminals), enabling connections to other neurons via *synapses*.
+--><p>Vì hồi quy tuyến tính (được phát minh vào năm 1795) được phát triển
+trước ngành khoa học thần kinh tính toán, nên việc mô tả hồi quy tuyến
+tính như một mạng nơ-ron có vẻ hơi ngược thời. Để hiểu tại sao nhà
+nghiên cứu sinh vật học/thần kinh học Warren McCulloch và Walter Pitts
+tìm đến các mô hình tuyến tính để làm điểm khởi đầu nghiên cứu và phát
+triển các mô hình nơ-ron nhân tạo, hãy xem ảnh của một nơ-ron sinh học
+tại <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig_Neuron</span></code>. Mô hình này bao gồm <em>sợi nhánh</em> (cổng đầu
+vào), <em>nhân tế bào</em> (bộ xử lý trung tâm), <em>sợi trục</em> (dây đầu ra), và
+<em>đầu cuối sợi trục</em> (cổng đầu ra), cho phép kết nối với các tế bào thần
+kinh khác thông qua <em>synapses</em>.</p>
+<!--
+![The real neuron](../img/Neuron.svg)
+--><div class="figure align-default" id="id4">
+<span id="fig-neuron"></span><img alt="../img/Neuron.svg" src="../img/Neuron.svg" /><p class="caption"><span class="caption-text">Nơ-ron trong thực tế</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<!--
+Information $x_i$ arriving from other neurons (or environmental sensors such as the retina) is received in the dendrites.
+In particular, that information is weighted by *synaptic weights* $w_i$ determining the effect of the inputs (e.g., activation or inhibition via the product $x_i w_i$).
+The weighted inputs arriving from multiple sources are aggregated in the nucleus as a weighted sum $y = \sum_i x_i w_i + b$,
+and this information is then sent for further processing in the axon $y$, typically after some nonlinear processing via $\sigma(y)$.
+From there it either reaches its destination (e.g., a muscle) or is fed into another neuron via its dendrites.
+--><p>Thông tin <span class="math notranslate nohighlight">\(x_i\)</span> đến từ các nơ-ron khác (hoặc các cảm biến môi
+trường như võng mạc) được tiếp nhận tại các sợi nhánh. Cụ thể, thông tin
+đó được nhân với các <em>trọng số của synapses</em> <span class="math notranslate nohighlight">\(w_i\)</span> để xác định mức
+ảnh hưởng của từng đầu vào (ví dụ: kích hoạt hoặc ức chế thông qua tích
+<span class="math notranslate nohighlight">\(x_i w_i\)</span>). Các đầu vào có trọng số đến từ nhiều nguồn được tổng
+hợp trong nhân tế bào dưới dạng tổng có trọng số
+<span class="math notranslate nohighlight">\(y = \ sum_i x_i w_i + b\)</span> và thông tin này sau đó được gửi đi để
+xử lý thêm trong sợi trục <span class="math notranslate nohighlight">\(y\)</span>, thường là sau một vài xử lý phi
+tuyến tính qua <span class="math notranslate nohighlight">\(\sigma(y)\)</span>. Từ đó, nó có thể được gửi đến đích (ví
+dụ, cơ bắp) hoặc được đưa vào một tế bào thần kinh khác thông qua các
+sợi nhánh.</p>
+<!--
+Certainly, the high-level idea that many such units could be cobbled together with the right connectivity and right learning algorithm,
+to produce far more interesting and complex behavior than any one neuron along could express owes to our study of real biological neural systems.
+--><p>Dựa trên các nghiên cứu thực tế về các hệ thống thần kinh sinh học, ta
+chắc chắn một điều rằng nhiều đơn vị như vậy khi được kết hợp với nhau
+theo đúng cách, cùng với thuật toán học phù hợp, sẽ tạo ra các hành vi
+thú vị và phức tạp hơn nhiều so với bất kỳ nơ-ron đơn lẻ nào có thể làm
+được.</p>
+<!-- ===================== Kết thúc dịch Phần 16 ===================== --><!-- ===================== Bắt đầu dịch Phần 17 ===================== --><!--
+At the same time, most research in deep learning today draws little direct inspiration in neuroscience.
+We invoke Stuart Russell and Peter Norvig who, in their classic AI text book *Artificial Intelligence: A Modern Approach* :cite:`Russell.Norvig.2016`,
+pointed out that although airplanes might have been *inspired* by birds, ornithology has not been the primary driver of aeronautics innovation for some centuries.
+Likewise, inspiration in deep learning these days comes in equal or greater measure from mathematics, statistics, and computer science.
+--><p>Đồng thời, hầu hết các nghiên cứu trong học sâu ngày nay chỉ lấy một
+phần cảm hứng nhỏ từ ngành thần kinh học. Như trong cuốn sách kinh điển
+về AI <em>Trí tuệ Nhân tạo: Một hướng Tiếp cận Hiện đại</em>
+<span class="bibtex" id="id1">[Russell.Norvig.2016]</span> của Stuart Russell và Peter Norvig, họ đã
+chỉ ra rằng: mặc dù máy bay có thể được lấy <em>cảm hứng</em> từ loài chim,
+ngành điểu học không phải động lực chính làm đổi mới ngành hàng không
+trong nhiều thế kỷ qua. Tương tự, cảm hứng trong học sâu hiện nay chủ
+yếu đến từ ngành toán học, thống kê và khoa học máy tính.</p>
+<!-- ========================================= REVISE PHẦN 9 - KẾT THÚC ===================================--><!-- ========================================= REVISE PHẦN 10 - BẮT ĐẦU ===================================--><!--
+## Summary
+--></div>
+</div>
+<div class="section" id="tom-tat">
+<h1>Tóm tắt<a class="headerlink" href="#tom-tat" title="Permalink to this headline">¶</a></h1>
+<!--
+* Key ingredients in a machine learning model are training data, a loss function, an optimization algorithm, and quite obviously, the model itself.
+* Vectorizing makes everything better (mostly math) and faster (mostly code).
+* Minimizing an objective function and performing maximum likelihood can mean the same thing.
+* Linear models are neural networks, too.
+--><ul class="simple">
+<li><p>Nguyên liệu của một mô hình học máy bao gồm dữ liệu huấn luyện, một
+hàm mất mát, một thuật toán tối ưu, và tất nhiên là cả chính mô hình
+đó.</p></li>
+<li><p>Vector hóa giúp mọi thứ trở nên dễ hiểu hơn (về mặt toán học) và
+nhanh hơn (về mặt lập trình).</p></li>
+<li><p>Cực tiểu hóa hàm mục tiêu và thực hiện phương pháp hợp lý cực đại có
+ý nghĩa giống nhau.</p></li>
+<li><p>Các mô hình tuyến tính cũng là các mạng nơ-ron.</p></li>
+</ul>
+<!-- ===================== Kết thúc dịch Phần 17 ===================== --><!-- ===================== Bắt đầu dịch Phần 18 ===================== --><!--
+## Exercises
+--></div>
+<div class="section" id="bai-tap">
+<h1>Bài tập<a class="headerlink" href="#bai-tap" title="Permalink to this headline">¶</a></h1>
+<!--
+1. Assume that we have some data $x_1, \ldots, x_n \in \mathbb{R}$. Our goal is to find a constant $b$ such that $\sum_i (x_i - b)^2$ is minimized.
+    * Find a closed-form solution for the optimal value of $b$.
+    * How does this problem and its solution relate to the normal distribution?
+2. Derive the closed-form solution to the optimization problem for linear regression with squared error.
+To keep things simple, you can omit the bias $b$ from the problem (we can do this in principled fashion by adding one column to $X$ consisting of all ones).
+    * Write out the optimization problem in matrix and vector notation (treat all the data as a single matrix, all the target values as a single vector).
+    * Compute the gradient of the loss with respect to $w$.
+    * Find the closed form solution by setting the gradient equal to zero and solving the matrix equation.
+    * When might this be better than using stochastic gradient descent? When might this method break?
+3. Assume that the noise model governing the additive noise $\epsilon$ is the exponential distribution. That is, $p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)$.
+    * Write out the negative log-likelihood of the data under the model $-\log P(Y \mid X)$.
+    * Can you find a closed form solution?
+    * Suggest a stochastic gradient descent algorithm to solve this problem.
+    What could possibly go wrong (hint - what happens near the stationary point as we keep on updating the parameters). Can you fix this?
+--><ol class="arabic simple">
+<li><p>Giả sử ta có dữ liệu <span class="math notranslate nohighlight">\(x_1, \ldots, x_n \in \mathbb{R}\)</span>. Mục
+tiêu của ta là đi tìm một hằng số <span class="math notranslate nohighlight">\(b\)</span> để cực tiểu hóa
+<span class="math notranslate nohighlight">\(\sum_i (x_i - b)^2\)</span>.</p>
+<ul class="simple">
+<li><p>Tìm một công thức nghiệm cho giá trị tối ưu của <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
+<li><p>Bài toán và nghiệm của nó có liên hệ như thế nào tới phân phối
+chuẩn?</p></li>
+</ul>
+</li>
+<li><p>Xây dựng công thức nghiệm cho bài toán tối ưu hóa hồi quy tuyến tính
+với bình phương sai số. Để đơn giản hơn, bạn có thể bỏ qua hệ số điều
+chỉnh <span class="math notranslate nohighlight">\(b\)</span> ra khỏi bài toán (chúng ta có thể thực hiện việc này
+bằng cách thêm vào một cột toàn giá trị một vào <span class="math notranslate nohighlight">\(X\)</span>).</p>
+<ul class="simple">
+<li><p>Viết bài toán tối ưu hóa theo ký hiệu ma trận-vector (xem tất cả
+các điểm dữ liệu như một ma trận và tất cả các giá trị mục tiêu
+như một vector).</p></li>
+<li><p>Tính gradient của hàm mất mát theo <span class="math notranslate nohighlight">\(w\)</span>.</p></li>
+<li><p>Tìm công thức nghiệm bằng cách giải phương trình gradient bằng
+không.</p></li>
+<li><p>Khi nào phương pháp làm này tốt hơn so với sử dụng hạ gradient
+ngẫu nhiên? Khi nào phương pháp này không hoạt động?</p></li>
+</ul>
+</li>
+<li><p>Giả sử rằng mô hình nhiễu điều khiển nhiễu cộng <span class="math notranslate nohighlight">\(\epsilon\)</span> là
+phân phối mũ, nghĩa là
+<span class="math notranslate nohighlight">\(p(\epsilon) = \frac{1}{2} \exp(-|\epsilon|)\)</span>.</p>
+<ul class="simple">
+<li><p>Viết hàm đối log hợp lý của dữ liệu theo mô hình
+<span class="math notranslate nohighlight">\(-\log P(Y \mid X)\)</span>.</p></li>
+<li><p>Bạn có thể tìm ra nghiệm theo công thức không?</p></li>
+<li><p>Gợi ý là thuật toán hạ gradient ngẫu nhiên có thể giải quyết vấn
+đề này.</p></li>
+<li><p>Điều gì có thể sai ở đây (gợi ý - điều gì xảy ra gần điểm dừng khi
+chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó không?</p></li>
+</ul>
+</li>
+</ol>
+<!-- ===================== Kết thúc dịch Phần 18 ===================== --><!-- ========================================= REVISE PHẦN 10 - KẾT THÚC ===================================--><!--
+## [Discussions](https://discuss.mxnet.io/t/2331)
+--></div>
+<div class="section" id="thao-luan">
+<h1>Thảo luận<a class="headerlink" href="#thao-luan" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://discuss.mxnet.io/t/2331">Tiếng Anh</a></p></li>
+<li><p><a class="reference external" href="https://forum.machinelearningcoban.com/c/d2l">Tiếng Việt</a></p></li>
+</ul>
+</div>
+<div class="section" id="nhung-nguoi-thuc-hien">
+<h1>Những người thực hiện<a class="headerlink" href="#nhung-nguoi-thuc-hien" title="Permalink to this headline">¶</a></h1>
+<p>Bản dịch trong trang này được thực hiện bởi:</p>
+<ul class="simple">
+<li><p>Đoàn Võ Duy Thanh</p></li>
+<li><p>Lê Khắc Hồng Phúc</p></li>
+<li><p>Phạm Minh Đức</p></li>
+<li><p>Phạm Ngọc Bảo Anh</p></li>
+<li><p>Nguyễn Văn Tâm</p></li>
+<li><p>Phạm Hồng Vinh</p></li>
+<li><p>Nguyễn Phan Hùng Thuận</p></li>
+<li><p>Vũ Hữu Tiệp</p></li>
+<li><p>Tạ H. Duy Nguyên</p></li>
+<li><p>Bùi Nhật Quân</p></li>
+<li><p>Lê Gia Thiên Bửu</p></li>
+<li><p>Lý Phi Long</p></li>
+<li><p>Nguyễn Minh Thư</p></li>
+<li><p>Tạ Đức Huy</p></li>
+<li><p>Minh Trí Nguyễn</p></li>
+<li><p>Trần Thị Hồng Hạnh</p></li>
+<li><p>Nguyễn Quang Hải</p></li>
+<li><p>Lê Thành Vinh</p></li>
+</ul>
+<p>asdf</p>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
