@@ -1,6 +1,6 @@
 
-Machine Learning cho dữ liệu dạng bảng:ư
-========================================
+Machine Learning cho dữ liệu dạng bảng
+======================================
 
 
 
@@ -9,6 +9,7 @@ Machine Learning cho dữ liệu dạng bảng:ư
 
 .. toctree::
    :maxdepth: 1
+   :numbered:
 
    sample
    sample2

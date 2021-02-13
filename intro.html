@@ -1,139 +1,263 @@
+
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Giới thiệu &#8212; Machine Learning cho dữ liệu dạng bảng  documentation</title>
     
-    <title>Giới thiệu &#8212; Machine Learning cho dữ liệu dạng bảng 0.0.1 documentation</title>
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.da26317cf37e5c4af2fa3e6253912353.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
-    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.grey-deep_orange.min.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
-    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/d2l.js"></script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
   </head>
-<body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
-    <div class="mdl-layout__header-row">
-        
-        <nav class="mdl-navigation breadcrumb">
-            <a class="mdl-navigation__link is-active">Giới thiệu</a>
-        </nav>
-        <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation">
-        
-<form class="form-inline pull-sm-right" action="search.html" method="get">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
-          <i class="material-icons">search</i>
-        </label>
-        <div class="mdl-textfield__expandable-holder">
-          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
-          <input type="hidden" name="check_keywords" value="yes" />
-          <input type="hidden" name="area" value="default" />
-        </div>
-      </div>
-      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
-      Quick search
-      </div>
-</form>
-        
-<a id="button-show-source"
-    class="mdl-button mdl-js-button mdl-button--icon"
-    href="_sources/intro.rst.txt" rel="nofollow">
-  <i class="material-icons">code</i>
-</a>
-<div class="mdl-tooltip" data-mdl-for="button-show-source">
-Show Source
-</div>
-        </nav>
-    </div>
-    <div class="mdl-layout__header-row header-links">
-      <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
           
-              <a  class="mdl-navigation__link" href="https://github.com/tiepvupsu/tabpipes-book">
-                  <i class="fab fa-github"></i>
-                  GitHub
-              </a>
-      </nav>
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo-bw.png" class="logo" alt="logo">
+  
+  
+  <h3 class="site-logo" id="site-title">Machine Learning cho dữ liệu dạng bảng</h3>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sample.html">
+   1. Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sample.html#hoi-quy-tuyen-tinh">
+   2. Hồi quy Tuyến tính
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sample2.html">
+   3. Các Thành phần Cơ bản của Hồi quy Tuyến tính
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<hr>
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-</header><header class="mdl-layout__drawer">
-    
-          <!-- Title -->
-      <span class="mdl-layout-title">
-          <a class="title" href="index.html">
-              <img class="logo" src="_static/logo-with-text-vi.png" alt="Machine Learning cho dữ liệu dạng bảng"/>
-          </a>
-      </span>
-    
-    
-      <div class="globaltoc">
-        <span class="mdl-layout-title toc">Table Of Contents</span>
-        
-        
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <nav class="mdl-navigation">
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="sample.html">Linear Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample.html#hoi-quy-tuyen-tinh">Hồi quy Tuyến tính</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample2.html">Các Thành phần Cơ bản của Hồi quy Tuyến tính</a></li>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Giới thiệu
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bang">
+   Bảng
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cong-thuc-toan">
+   Công thức toán
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ham-mat-mat">
+     Hàm mất mát
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nghiem-theo-cong-thuc">
+     Nghiệm theo Công thức
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ha-gradient">
+     Hạ Gradient
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#du-doan-bang-mo-hinh-da-duoc-huan-luyen">
+     Dự đoán bằng Mô hình đã được Huấn luyện
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vector-hoa-de-tang-toc-do-tinh-toan">
+     Vector hóa để tăng Tốc độ Tính toán
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#phan-phoi-chuan-va-ham-mat-mat-binh-phuong">
+   Phân phối Chuẩn và Hàm mất mát Bình phương
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tu-hoi-quy-tuyen-tinh-toi-mang-hoc-sau">
+   Từ Hồi quy Tuyến tính tới Mạng Học sâu
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gian-do-mang-no-ron">
+     Giản đồ Mạng Nơ-ron
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sinh-vat-hoc">
+     Sinh vật học
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tom-tat">
+   Tóm tắt
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bai-tap">
+   Bài tập
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thao-luan">
+   Thảo luận
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nhung-nguoi-thuc-hien">
+   Những người thực hiện
+  </a>
+ </li>
 </ul>
 
-            </nav>
+        </nav>
         
         </div>
-    
-</header>
-        <main class="mdl-layout__content" tabIndex="0">
-
-	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
-    <header class="mdl-layout__drawer">
-    
-          <!-- Title -->
-      <span class="mdl-layout-title">
-          <a class="title" href="index.html">
-              <img class="logo" src="_static/logo-with-text-vi.png" alt="Machine Learning cho dữ liệu dạng bảng"/>
-          </a>
-      </span>
-    
-    
-      <div class="globaltoc">
-        <span class="mdl-layout-title toc">Table Of Contents</span>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
-        
-            
-            <nav class="mdl-navigation">
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="sample.html">Linear Regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample.html#hoi-quy-tuyen-tinh">Hồi quy Tuyến tính</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample2.html">Các Thành phần Cơ bản của Hồi quy Tuyến tính</a></li>
-</ul>
-
-            </nav>
-        
-        </div>
-    
-</header>
-
-    <div class="document">
-        <div class="page-content" role="main">
-        
+              <div>
+                
   <div class="section" id="gioi-thieu">
 <h1>Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Permalink to this headline">¶</a></h1>
 </div>
@@ -146,7 +270,7 @@ Show Source
 </div>
 <div class="section" id="bang">
 <h1>Bảng<a class="headerlink" href="#bang" title="Permalink to this headline">¶</a></h1>
-<table class="docutils align-default">
+<table class="table">
 <colgroup>
 <col style="width: 75%" />
 <col style="width: 25%" />
@@ -903,46 +1027,27 @@ chúng ta tiếp tục cập nhật các tham số). Bạn có thể sửa nó k
 </div>
 
 
-        </div>
-        <div class="side-doc-outline">
-            <div class="side-doc-outline--content"> 
-<div class="localtoc">
-    <p class="caption">
-      <span class="caption-text">Table Of Contents</span>
-    </p>
-    <ul>
-<li><a class="reference internal" href="#">Giới thiệu</a></li>
-<li><a class="reference internal" href="#python">Python</a></li>
-<li><a class="reference internal" href="#bang">Bảng</a></li>
-<li><a class="reference internal" href="#cong-thuc-toan">Công thức toán</a><ul>
-<li><a class="reference internal" href="#ham-mat-mat">Hàm mất mát</a></li>
-<li><a class="reference internal" href="#nghiem-theo-cong-thuc">Nghiệm theo Công thức</a></li>
-<li><a class="reference internal" href="#ha-gradient">Hạ Gradient</a></li>
-<li><a class="reference internal" href="#du-doan-bang-mo-hinh-da-duoc-huan-luyen">Dự đoán bằng Mô hình đã được Huấn luyện</a></li>
-<li><a class="reference internal" href="#vector-hoa-de-tang-toc-do-tinh-toan">Vector hóa để tăng Tốc độ Tính toán</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#phan-phoi-chuan-va-ham-mat-mat-binh-phuong">Phân phối Chuẩn và Hàm mất mát Bình phương</a></li>
-<li><a class="reference internal" href="#tu-hoi-quy-tuyen-tinh-toi-mang-hoc-sau">Từ Hồi quy Tuyến tính tới Mạng Học sâu</a><ul>
-<li><a class="reference internal" href="#gian-do-mang-no-ron">Giản đồ Mạng Nơ-ron</a></li>
-<li><a class="reference internal" href="#sinh-vat-hoc">Sinh vật học</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#tom-tat">Tóm tắt</a></li>
-<li><a class="reference internal" href="#bai-tap">Bài tập</a></li>
-<li><a class="reference internal" href="#thao-luan">Thảo luận</a></li>
-<li><a class="reference internal" href="#nhung-nguoi-thuc-hien">Những người thực hiện</a></li>
-</ul>
-
-</div>
-            </div>
-        </div>
-
-      <div class="clearer"></div>
-    </div><div class="pagenation">
-  </div>
+              </div>
+              
         
-        </main>
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
     </div>
+    
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
   </body>
 </html>
