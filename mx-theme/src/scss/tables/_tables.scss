@@ -1,0 +1,40 @@
+.page-content {
+    table:not(.footnote):not(.indextable):not(.hlist):not(.option-list):not(.field-list) {
+        @extend .mdl-data-table;
+        @extend .mdl-shadow--2dp;
+
+        margin: 1.5rem 0;
+        table-layout: fixed;
+        max-width: 100%;
+        min-width: 70%;
+
+
+        th, td, th:last-of-type, td:last-of-type {
+            @extend .mdl-data-table__cell--non-numeric;
+            white-space: normal;
+            overflow-wrap: break-word;
+            font-size: 0.8rem;
+            padding: 0.4rem;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 1.2rem;
+        }
+
+        th, th:last-of-type {
+            text-align: right;
+        }
+
+        caption {
+            font-size: $font_size;
+            margin: 1rem 0 0.8rem 0;
+            white-space: normal;
+            .caption-number {
+                font-style: normal;
+            }
+            .caption-number::after {
+                content: "\00a0";
+            }
+        }
+
+    }
+}
