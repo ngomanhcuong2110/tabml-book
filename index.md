@@ -11,4 +11,5 @@ Machine Learning cho dữ liệu dạng bảng
 :numbered:
 
 intro
+challenges
 ```
