@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>2. Dữ liệu dạng bảng &#8212; Machine Learning cho dữ liệu dạng bảng 0.0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue_grey-teal.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/d2l.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="1. Giới thiệu" href="intro.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active"><span class="section-number">2. </span>Dữ liệu dạng bảng</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/challenges.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/tiepvupsu/tabml-book">
+                  <i class="fab fa-github"></i>
+                  GitHub
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Machine Learning cho dữ liệu dạng bảng"/>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Giới thiệu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Dữ liệu dạng bảng</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Machine Learning cho dữ liệu dạng bảng"/>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Giới thiệu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Dữ liệu dạng bảng</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="du-lieu-dang-bang">
+<h1><span class="section-number">2. </span>Dữ liệu dạng bảng<a class="headerlink" href="#du-lieu-dang-bang" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="kho-khan-khi-lam-viec-voi-du-lieu-dang-bang">
+<h2><span class="section-number">2.1. </span>Khó khăn khi làm việc với dữ liệu dạng bảng<a class="headerlink" href="#kho-khan-khi-lam-viec-voi-du-lieu-dang-bang" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="su-khan-hiem-cua-du-lieu-dang-bang">
+<h3><span class="section-number">2.1.1. </span>Sự khan hiếm của dữ liệu dạng bảng<a class="headerlink" href="#su-khan-hiem-cua-du-lieu-dang-bang" title="Permalink to this headline">¶</a></h3>
+<p>Một trong những đặc điểm của dữ liệu dạng bảng là khó khăn trong việc
+thu thập dữ liệu. Dữ liệu ảnh hay văn bản có thể được tìm kiếm dễ dàng
+qua các bộ dữ liệu được công khai trên mạng. Với dữ liệu bảng, mỗi công
+ty thường có dữ liệu và cách thu thập riêng; và quan trọng hơn, những dữ
+liệu này rất ít khi được công bố rộng rãi. Các công ty lớn có thể công
+bố thuật toán, mã nguồn của nghiều mô hình ML, nhưng dữ liệu mới là tài
+sản quý hơn cả. Việc khan hiếm của dữ liệu dạng bảng một phần dẫn đến sự
+thiếu hụt về các tài liệu cho dữ liệu loại này và cũng gián tiếp dẫn đến
+việc các thuật toán Deep Learning, vốn cần rất nhiều dữ liệu để huấn
+luyện, thường không mang lại kết quả tốt nhất.</p>
+</div>
+<div class="section" id="du-lieu-bi-nhieu-hoac-khuyet">
+<h3><span class="section-number">2.1.2. </span>Dữ liệu bị nhiễu hoặc khuyết<a class="headerlink" href="#du-lieu-bi-nhieu-hoac-khuyet" title="Permalink to this headline">¶</a></h3>
+<p>Nhiều đặc trưng trong dữ liệu dạng bảng thường được thu thập bằng các
+phiếu khảo sát (điện tử hoặc thủ công). Chẳng hạn, khi người dùng tạo
+tài khoản ở một trang mạng, họ được yêu cầu nhập tên, tuổi, quê quán, vị
+trí địa lý, v.v; chuyện người dùng cố tình khai báo sai thông tin chắc
+chắn không phải là chuyện hiếm. Thậm chí, một người dùng có thể có nhiều
+tài khoản ảo với những thông tin trái ngược. Hoặc họ có thể đã từ chối
+cung cấp một loại thông tin nào đó, chẳng hạn tắt GPS, khiến trường
+thông tin đó bị khuyết.</p>
+</div>
+<div class="section" id="nhieu-dac-trung-hang-muc">
+<h3><span class="section-number">2.1.3. </span>Nhiều đặc trưng hạng mục<a class="headerlink" href="#nhieu-dac-trung-hang-muc" title="Permalink to this headline">¶</a></h3>
+<p>Không giống như đặc trưng ảnh Các mô hình ML thường hoạt động tốt với
+đầu vào là các giá trị dạng số</p>
+</div>
+<div class="section" id="dac-trung-hang-muc-co-nhieu-phan-tu-phan-biet">
+<h3><span class="section-number">2.1.4. </span>Đặc trưng hạng mục có nhiều phần tử phân biệt<a class="headerlink" href="#dac-trung-hang-muc-co-nhieu-phan-tu-phan-biet" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="khong-the-ap-dung-transfer-learning">
+<h3><span class="section-number">2.1.5. </span>Không thể áp dụng Transfer Learning<a class="headerlink" href="#khong-the-ap-dung-transfer-learning" title="Permalink to this headline">¶</a></h3>
+<p>Với dữ liệu ảnh hay văn bản, kể cả khi không có lượng dữ liệu đủ lớn,
+các kỹ sư ML vẫn có thể tạo ra các mô hình với chất lượng cao dựa trên
+kỹ thuật Transfer Learning [^1]. Kỹ thuật này</p>
+</div>
+</div>
+<div class="section" id="cac-phuong-phap-xay-dung-dac-trung">
+<h2><span class="section-number">2.2. </span>Các phương pháp xây dựng đặc trưng<a class="headerlink" href="#cac-phuong-phap-xay-dung-dac-trung" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="impute-du-lieu-bi-khuyet">
+<h2><span class="section-number">2.3. </span>Impute dữ liệu bị khuyết<a class="headerlink" href="#impute-du-lieu-bi-khuyet" title="Permalink to this headline">¶</a></h2>
+<p>[^1] test footnote</p>
+</div>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">2. Dữ liệu dạng bảng</a><ul>
+<li><a class="reference internal" href="#kho-khan-khi-lam-viec-voi-du-lieu-dang-bang">2.1. Khó khăn khi làm việc với dữ liệu dạng bảng</a><ul>
+<li><a class="reference internal" href="#su-khan-hiem-cua-du-lieu-dang-bang">2.1.1. Sự khan hiếm của dữ liệu dạng bảng</a></li>
+<li><a class="reference internal" href="#du-lieu-bi-nhieu-hoac-khuyet">2.1.2. Dữ liệu bị nhiễu hoặc khuyết</a></li>
+<li><a class="reference internal" href="#nhieu-dac-trung-hang-muc">2.1.3. Nhiều đặc trưng hạng mục</a></li>
+<li><a class="reference internal" href="#dac-trung-hang-muc-co-nhieu-phan-tu-phan-biet">2.1.4. Đặc trưng hạng mục có nhiều phần tử phân biệt</a></li>
+<li><a class="reference internal" href="#khong-the-ap-dung-transfer-learning">2.1.5. Không thể áp dụng Transfer Learning</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cac-phuong-phap-xay-dung-dac-trung">2.2. Các phương pháp xây dựng đặc trưng</a></li>
+<li><a class="reference internal" href="#impute-du-lieu-bi-khuyet">2.3. Impute dữ liệu bị khuyết</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="intro.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>1. Giới thiệu</div>
+         </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+
+Machine Learning cho dữ liệu dạng bảng
+======================================
+
+
+
+.. raw:: html
+   :file: frontpage.html
+
+.. toctree::
+   :maxdepth: 1
+   :numbered:
+
+   intro
+   challenges
+
+Lorem ipsum [#f1]\_ dolor sit amet … [#f2]\_
+
+.. rubric:: Footnotes
+
+[#f1] Text of the first footnote.
+
+[#f2] Text of the second footnote.
