@@ -1,8 +1,5 @@
-on:
-  push:
-    branches:
-      - master
-name: Deployment
+on: [push]
+name: Test_TabTool
 
 jobs:
   build:
