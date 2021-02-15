@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - master
+name: Deployment
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+      - name: Prepare pandoc
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
+          # https://github.com/r-lib/actions/tree/master/setup-pandoc
+      - run: |
+         cd tool
+         python setup.py install
+         cd ..
+         rm -rf _build
+         tabtool build html
+     - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: deploy # The branch the action should deploy to.
+          folder: ./_build/html # The folder the action should deploy.
