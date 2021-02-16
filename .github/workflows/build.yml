@@ -26,6 +26,8 @@ jobs:
          python setup.py install
          cd ..
          rm -rf _build
+         tabtool build rst
+         cp static/frontpage/frontpage.html _build/rst/
          tabtool build html
 
       - name: Test tool
