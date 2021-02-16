@@ -24,19 +24,37 @@ cấp một loại thông tin nào đó, chẳng hạn tắt GPS, khiến trư�
 
 ### Nhiều đặc trưng hạng mục
 
-Không giống như đặc trưng ảnh 
-Các mô hình ML thường hoạt động tốt với đầu vào là các giá trị dạng số
+Các mô hình ML, đặc biệt là các mô hình DL, thường hoạt động tốt khi dữ liệu đầu vào ở dạng số và liên tục. Dữ liệu ảnh, mặc dù
+nhận các giá trị số nguyên nhưng cũng có thể coi là liên tục với màu sắc thay đổi từ từ theo giá trị
+các điểm ảnh. Đầu vào của các mô hình NLP cũng thường là các embedding vector của các từ/câu/văn bản, các
+vector này là vector của các số thực liên tục. Các embedding gần nhau trong không gian cũng thường mang
+ý nghĩa gần nhau. Dữ liệu dạng bảng thường ít khi ở dưới dạng liên tục.
+
+Đặc trưng trong dữ liệu bảng có thể là một trong nhiều hạng mục khác nhau (_categorical data_).
+Chẳng hạn, nơi sinh của người dùng, tên của một loại sản phẩm hay mã của một phần quảng cáo là các loại đặc trưng ở dạng danh mục.
+Mặc dù vẫn có thể có các hạng mục mang ý nghĩa gần với nhau (ví dụ về mặt địa lý hoặc về mặt chủng loại), rất khó để đo đếm sự gần nhau đó.
+Hà Nội có thể rất xa Tp HCM và gần Hà Giang hơn, nhưng Hà Nội lại giống Tp HCM hơn theo nghĩa đều là các thành phố lớn.
 
 ### Đặc trưng hạng mục có nhiều phần tử phân biệt
+
+Cách truyền thống để biến các đặc trưng hạng mục về dạng số là sử dụng phép biến đổi one-hot ^[là một vector].
 
 ### Không thể áp dụng Transfer Learning
 
 Với dữ liệu ảnh hay văn bản, kể cả khi không có lượng dữ liệu đủ lớn, các kỹ sư ML vẫn
-có thể tạo ra các mô hình với chất lượng cao dựa trên kỹ thuật Transfer Learning [^1].
+có thể tạo ra các mô hình với chất lượng cao dựa trên kỹ thuật Transfer Learning.
 Kỹ thuật này 
 
 ## Các phương pháp xây dựng đặc trưng
 
 ## Impute dữ liệu bị khuyết
 
-[^1] test footnote
+```{python}
+from matplotlib import pyplot as plt
+plt.plot([1, 2, 3], [1, 4, 9])
+```
+
+```{python, results="hold"}
+print("Hello")
+print("World")
+```
