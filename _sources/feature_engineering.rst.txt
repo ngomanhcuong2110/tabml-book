@@ -1,0 +1,45 @@
+
+Các phương pháp xây dựng đặc trưng
+==================================
+
+Dữ liệu dạng số
+---------------
+
+Dữ liệu dạng hạng mục
+---------------------
+
+.. _sec_one_hot:
+
+One-hot
+~~~~~~~
+
+
+.. _sec_hashing:
+
+Hashing
+~~~~~~~
+
+
+.. _sec_embedding:
+
+Embedding
+~~~~~~~~~
+
+
+.. _sec_bucketizing:
+
+Bucketizing
+~~~~~~~~~~~
+
+
+.. _sec_feature_cross:
+
+Cross
+~~~~~
+
+
+Khám phá dữ liệu
+================
+
+Bộ quản lý đặc trưng
+====================

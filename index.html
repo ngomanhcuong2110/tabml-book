@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Giới thiệu" href="intro.html" /> 
+    <link rel="next" title="1. Dữ liệu dạng bảng" href="tabular_data.html" /> 
   </head>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
@@ -90,8 +90,11 @@ Show Source
             
             <nav class="mdl-navigation">
                 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Giới thiệu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">2. Dữ liệu dạng bảng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabular_data.html">1. Dữ liệu dạng bảng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_cleaning.html">2. Làm sạch dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html">3. Các phương pháp xây dựng đặc trưng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#kham-pha-du-lieu">4. Khám phá dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#bo-quan-ly-dac-trung">5. Bộ quản lý đặc trưng</a></li>
 </ul>
 
             </nav>
@@ -119,8 +122,11 @@ Show Source
             
             <nav class="mdl-navigation">
                 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Giới thiệu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">2. Dữ liệu dạng bảng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabular_data.html">1. Dữ liệu dạng bảng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_cleaning.html">2. Làm sạch dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html">3. Các phương pháp xây dựng đặc trưng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#kham-pha-du-lieu">4. Khám phá dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#bo-quan-ly-dac-trung">5. Bộ quản lý đặc trưng</a></li>
 </ul>
 
             </nav>
@@ -134,344 +140,72 @@ Show Source
         
   <div class="section" id="machine-learning-cho-du-lieu-dang-bang">
 <h1>Machine Learning cho dữ liệu dạng bảng<a class="headerlink" href="#machine-learning-cho-du-lieu-dang-bang" title="Permalink to this headline">¶</a></h1>
-<head>
-  <style>
-h1, .side-doc-outline  {
-    display: none;
-}
-.document .page-content {
-    width: 100%;
-}
-h2, h3, h4 {
-    letter-spacing: 2px;
-}
-.mdl-grid {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 150px 0 0 0;
-}
-h2.toc {
-    padding: 150px 0 0 0;
-}
-.header h2 {
-    font-size: 30px;
-    padding-bottom: 35px;
-}
-.header p {
-    font-size: 24px;
-    letter-spacing: 2px;
-    line-height: 36px;
-    padding-bottom: 10px;
-}
-.header .mdl-button {
-  margin: 0px 10px;
-  letter-spacing: 2px;
-  font-size: 16px;
-  margin: 1rem 1.5rem;
-  height: 40px;
-  width: 120px;
-}
-.author-item {
-  max-width: 300px;
-}
-.author-item h3 {
-    padding-top: 25px;
-    padding-bottom: 10px;
-}
-.author-item img {
-    border-radius: 50%;
-    width: 120px;
-}
-.authors h4 {
-    width: 100%;
-}
-
-.features .mdl-cell {
-    padding: 0 36px;
-}
-.features h2, .features-2 h2 {
-    padding-bottom: 24px;
-}
-.features-2 p {
-    padding: 0 200px;
-}
-.institute.mdl-grid {
-    padding: 24px;
-}
-.institute .mdl-cell {
-    text-align: left;
-    padding: 0;
-}
-#map {
-    height: 400px;
-    width: 100%;
-}
-a {
-  font-size: normal;
-}
-
-@media (max-width: 1000px) {
-    .mdl-grid, h2.toc {
-        padding: 50px 0 0 0;
-    }
-    .header img, .features-2 img {
-        max-width: 300px;
-    }
-    .header .mdl-cell--1-col {
-        display: none;
-    }
-    .features img {
-        max-width: 350px;
-    }
-    .features-2 p {
-        padding: 0 24px;
-    }
-}
-    </style>
-</head>
-
-
-<div class = "mdl-grid header">
-  <div class = "mdl-cell mdl-cell--5-col">
-    <img src="_images/front.png" class="img-fluid" alt="">
-  </div>
-  <div class = "mdl-cell mdl-cell--1-col">
-  </div>
-  <div class = "mdl-cell mdl-cell--5-col mdl-cell--middle">
-    <h2>Machine Learning cho Dữ Liệu dạng Bảng</h2>
-    <p>An <b>interactive</b> deep learning book with code, math, and
-      discussions, based on the <b>NumPy</b> interface.
-      <br><br>
-<font color="#888"><small><i> The previous NDArray version is <a href="https://classic.d2l.ai">here</a> </i></small></font>
-    </p>
-  </div>
 </div>
-
-<div class="mdl-grid">
-  <div>
-    <h3>Announcements</h3>
-    <div align="left">
-    <ul>
-    <li><b>[New chapters]</b>
-      We have improved <a href="http://d2l.ai/chapter_preliminaries/index.html">Chapter: Preliminaries</a>,
-      added <a href="http://d2l.ai/chapter_recommender-systems/index.html">Chapter: Recommender Systems</a> and
-      <a href="http://d2l.ai/chapter_appendix_math/index.html">Appendix: Mathematics for Deep Learning</a>.
-      To keep track of the latest updates,
-      please follow D2L's <a href="https://github.com/d2l-ai/d2l-en">open-source project</a>.
-    </li>
-    <li><b>[Chinese version]</b>
-      The Chinese version is the <a href="https://raw.githubusercontent.com/d2l-ai/d2l-zh/master/img/frontpage/jd-190715-en.png">No. 1 best seller</a> of new books in "Computers and Internet" at the largest Chinese online bookstore.
-    </li>
-    <li><b>[Teaching]</b>
-      Slides, Jupyter notebooks, assignments, and videos of the Berkeley course can be found at the
-      <a href="https://courses.d2l.ai/berkeley-stat-157/syllabus.html">syllabus page</a>.
-    </li>
-    </ul>
-    </div>
-  </div>
+<div class="section" id="gioi-thieu">
+<h1>Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="muc-dich-cua-du-an">
+<h2>Mục đích của dự án<a class="headerlink" href="#muc-dich-cua-du-an" title="Permalink to this headline">¶</a></h2>
+<p>Kể từ sau thành công của AlexNet trong cuộc thi ImageNet năm 2012,
+Machine Learning (ML) đã trở thành một chủ đề hấp dẫn đối với sinh viên
+và các kỹ sư công nghệ. Các tập đoàn lớn đổ dồn tài nguyên vào phát
+triển các trung tâm nghiên cứu và các hệ thống tính toán để giải quyết
+các bài toán kinh doanh cũng như thu hút nhân tài. Việc một trường đại
+học có thêm một khoa riêng về Trí Tuệ Nhân Tạo (AI) cũng không phải
+hiếm. Các blog, khoá học, seminar về AI cũng mọc lên như nấm.</p>
+<p>Nhắc tới ML, phần nhiều bạn đọc đồng nhất nó với Deep Learning (DL) vì
+vô số tài liệu hiện tại chỉ nói về nó mà ít đề cập tới lịch sử lâu dài
+của ngành ML. Nhắc tới Machine Learning, bạn có thể chỉ thấy các bài
+toán mà đầu vào là ảnh/video hoặc các loại văn bản. Bạn cũng có thể đã
+từng mày mò với các mã nguồn có sẵn với những bộ dữ liệu đã được làm
+sạch sẽ và tập trung nhiều vào thuật toán Machine Learning. Tuy nhiên,
+dữ liệu và bài toán thực tế khác rất nhiều so với những demo mà các bạn
+thường thấy. Để giải quyết các bài toán kinh doanh, các kỹ sư cần rất
+nhiều dữ liệu khác ngoài ảnh và văn bản.</p>
+<p>Ví dụ, trong bài toán gợi ý sản phẩm tới khách hàng, các thông số về sản
+phẩm và về khách hàng đóng vai trò vô cùng quan trọng. Ảnh sản phầm, nội
+dung comment chỉ là một phần rất nhỏ trong những dữ liệu có thể mang lại
+độ chính xác cao cho thuật toán. Trong một ví dụ khác về nhận diện kỳ
+quan, ngoài bức ảnh, các thông tin khác về người chụp, vị trí địa lý,
+loại máy, v.v. chắc chắn sẽ mang lại kết quả cao hơn cho các mô hình.</p>
+<p>Có những bài toán rất quan trọng mà ở đó các thông tin về hình ảnh và
+văn bản có thể không hề tồn tại, chẳng hạn bài toán dự đoán nợ xấu, bài
+toán dự đoán lượng mua để cân đối kho hàng hay bài toán dự đoán lưu
+lượng server trong ngày Tết để chuẩn bị lượng máy chủ cho phù hợp. Để
+giải quyết các bài toán này, các hệ thống ML cần nhiều thông tin khác
+nhau về mỗi đối tượng. Các thông tin này thường được lưu dưới dạng bảng
+và thường được gọi là <strong>tabular data</strong>. Đáng tiếc thay, Deep Learning
+không phải lúc nào cũng hoạt động tốt với dữ liệu dạng này (Đọc thêm
+<a class="reference external" href="https://towardsdatascience.com/the-unreasonable-ineffectiveness-of-deep-learning-on-tabular-data-fd784ea29c33">The Unreasonable Ineffectiveness of Deep Learning on Tabular
+Data</a>).</p>
+<p>Các kỹ năng giải quyết các bài toán kinh doanh dựa trên dữ liệu dạng
+bảng này chưa được trình bày nhiều trong các tài liệu tiếng Việt. Dự án
+“Machine Learning cho dữ liệu dạng bảng” này được ra đời với mong muốn
+mang tới cho bạn đọc những kiến thức và kinh nghiệm mà cá nhân tôi thu
+được kể từ khi đi làm thực tế. Viết cũng là cách mà tôi thấy tốt nhất để
+củng cố lại kiến thức của bản thân.</p>
 </div>
-
-<div class = "authors mdl-grid">
-  <div class = "mdl-cell mdl-cell--3-col mdl-cell--top">
-    <div class="author-item">
-      <img src="./_images/aston.jpg"/>
-      <h3><a href="https://www.astonzhang.com/">Aston Zhang</a></h3>
-      <p>Amazon Senior Scientist<br>UIUC Ph.D.</p>
-    </div>
-  </div>
-  <div class = "mdl-cell mdl-cell--3-col mdl-cell--top">
-    <div class="author-item">
-      <img src="./_images/zack.jpg"/>
-      <h3><a href="http://zacklipton.com/">Zack C. Lipton</a></h3>
-      <p>Amazon Scientist<br>
-        CMU Assistant Professor<br>
-        UCSD Ph.D.</p>
-    </div>
-  </div>
-  <div class = "mdl-cell mdl-cell--3-col mdl-cell--top">
-    <div class="author-item">
-      <img src="./_images/mu.jpg"/>
-      <h3><a href="http://www.cs.cmu.edu/~muli/">Mu Li</a></h3>
-      <p>Amazon Principal Scientist<br>
-      CMU Ph.D.</p>
-    </div>
-  </div>
-  <div class = "mdl-cell mdl-cell--3-col mdl-cell--top">
-    <div class="author-item">
-      <img src="./_images/alex.jpg"/>
-      <h3><a href="https://alex.smola.org/">Alex J. Smola</a></h3>
-      <p>Amazon VP/Distinguished Scientist<br>
-        TU Berlin Ph.D.
-      </p>
-    </div>
-  </div>
-  <h3> We thank all the <a href="https://github.com/diveintodeeplearning/d2l-en/graphs/contributors">community contributors</a><br>for making this open source book better for everyone.</h3>
-  <h4><a href="https://github.com/diveintodeeplearning/d2l-en/blob/master/README.md#contribute-learn-how">Contribute to the book.</a></h4>
-</div>
-
-<div class = "features mdl-grid">
-  <div class = "mdl-cell mdl-cell--5-col mdl-cell--middle">
-    <div class="content">
-      <h2>Each section is an executable <a href="chapter_install/index.html">Jupyter notebook</a></h2>
-      <p>You can modify the code and tune hyperparameters to get instant
-      feedback to accumulate practical experiences in deep learning.</p>
-    </div>
-  </div>
-  <div class = "mdl-cell mdl-cell--7-col">
-	<img src="_images/notebook.gif">
-  </div>
-</div>
-
-<div class = "features-2 mdl-grid">
-  <h2>Mathematics + Figures + Code </h2>
-  <p>We offer an interactive learning experience with mathematics, figures,
-  code, text, and discussions, where concepts and techniques are illustrated
-    and implemented with experiments on real data sets.
-  </p>
-
-  <div class = "mdl-cell mdl-cell--4-col">
-    <img src="_images/eq.jpg"/>
-  </div>
-  <div class = "mdl-cell mdl-cell--4-col">
-    <img src="_images/figure.jpg"/>
-  </div>
-  <div class = "mdl-cell mdl-cell--4-col">
-    <img src="_images/code.jpg"/>
-  </div>
-</div>
-
-<div class = "features mdl-grid">
-  <div class = "mdl-cell mdl-cell--7-col">
-    <img src="_images/forum.gif">
-  </div>
-  <div class = "mdl-cell mdl-cell--5-col mdl-cell--middle">
-    <div class="content">
-      <h2>Active <a href="https://discuss.mxnet.io">community</a> support</h2>
-      <p>You can discuss and learn with thousands of peers in the community
-        through the link provided in each section.
-        </p>
-    </div>
-  </div>
-</div>
-
-<div class="features mdl-grid">
-  <div class = "mdl-cell mdl-cell--12-col">
-    <h3>D2L as a textbook or a reference book</h3>
-    <br>
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 2,
-          center: new google.maps.LatLng(10.8, 180.3),
-          mapTypeId: 'terrain'
-        });
-
-      var locations = [
-        ['CMU', 40.443279, -79.943889],
-        ['Fudan', 31.297640, 121.503629],
-        ['GeorgiaTech', 33.775444, -84.396371],
-        ['IIT Bombay', 19.134282, 72.912646],
-        ['IIT Kanpur', 26.512224, 80.233533],
-        ['IIT Ropar',  30.976563, 76.538215],
-        ['Kyungpook National U', 35.888949, 128.610718],
-        ['MIT', 42.360281, -71.093098],
-        ['Northeastern', 42.339386, -71.089279],
-        ['PKU', 39.987012, 116.305112],
-        ['SJTU', 31.024733, 121.433617],
-        ['SUFE',31.306851, 121.493008],
-        ['Texas A&M', 30.617810, -96.333042],
-        ['Federal de Minas Gerais', -19.871207, -43.967403],
-        ['UCB', 37.872119, -122.259398],
-        ['UCLA', 34.068512, -118.444870],
-        ['UCSB', 34.413981, -119.849795],
-        ['UIUC', 40.102379, -88.227408],
-        ['U Maryland',38.987052, -76.943692],
-        ['U New Hampshire',43.138784, -70.937798],
-        ['UNC',35.905182, -79.046044],
-        ['USTC', 31.822004, 117.281182],
-        ['U Tech Sydney', -33.883371, 151.200612],
-        ['U Politècnica de Catalunya', 41.387674, 2.113366],
-        ['ZJU', 30.308629, 120.086156],
-        ['UW',47.660589, -122.315527],
-      ];
-      for (var i = 0; i < locations.length; i++) {
-        var loc = locations[i];
-        var marker = new google.maps.Marker({
-          position: {lat: loc[1], lng: loc[2]},
-          map: map,
-          title: loc[0],
-        });
-      }
-    }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHVyB-dRW3fhSdUmy3lqoiaNjV9JVUR4M&callback=initMap">
-    </script>
-    <div class="institute mdl-grid">
-      <div class = "mdl-cell mdl-cell--6-col ">
-        Carnegie Mellon University (USA)<br>
-        Fudan University (China)<br>
-        Georgia Institute of Technology (USA)<br>
-        Indian Institute of Technology Bombay (India)<br>
-        Indian Institute of Technology Kanpur (India)<br>
-        Indian Institute of Technology Ropar (India)<br>
-        Kyungpook National University (Korea)<br>
-        Massachusetts Institute of Technology (USA)<br>
-        Northeastern University (USA)<br>
-        Peking University (China)<br>
-        Shanghai Jiao Tong University (China)<br>
-        Shanghai University of Finance and Economics (China)<br>
-        Texas A&amp;M University (USA)<br>
-      </div>
-      <div class = "mdl-cell mdl-cell--6-col ">
-        Universidade Federal de Minas Gerais (Brazil)<br>
-        University of California, Berkeley (USA)<br>
-        University of California, Los Angeles (USA)<br>
-        University of California, Santa Barbara (USA)<br>
-        University of Illinois at Urbana-Champaign (USA)<br>
-        University of Maryland (USA)<br>
-        University of New Hampshire (USA)<br>
-        University of North Carolina at Chapel Hill (USA)<br>
-        University of Science and Technology of China (China)<br>
-        University of Technology Sydney (Australia)<br>
-        University of Washington (USA)<br>
-        Universitat Politècnica de Catalunya (Spain)<br>
-        Zhejiang University (China)
-      </div>
-    </div> <!-- mdl-grid -->
-    <i>Please let d2lbook.en@gmail.com know if any is missed.</i>
-  </div>
-</div>
-
-<div class="mdl-grid">
-  <div>
-    <h3>BibTeX entry for citing the book</h3>
-    <br>
-    <div align="left">
-      <div class="highlight-python notranslate">
-        <div class="highlight">
-          <tt>
-            <pre>@book{zhang2019dive,
-    title={Dive into Deep Learning},
-    author={Aston Zhang and Zachary C. Lipton and Mu Li and Alexander J. Smola},
-    note={\url{http://www.d2l.ai}},
-    year={2019}
-}</pre>
-          </tt>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h2 class="toc"> Table of contents </h2>
+<div class="section" id="so-sanh-voi-machine-learning-co-ban">
+<h2>So sánh với Machine Learning cơ bản<a class="headerlink" href="#so-sanh-voi-machine-learning-co-ban" title="Permalink to this headline">¶</a></h2>
+<p>So với <a class="reference external" href="https://machinelearningcoban.com/">Machine Learning cơ bản</a>,
+dự án này sẽ rất khác. Tôi sẽ không viết thành các bài dài và công bố
+mỗi một hoặc hai tuần như trước mà chia thành các mục ngắn và không
+thường xuyên chia sẻ. Tôi sẽ chỉ công bố rộng rãi khi hoàn thiện một
+chương. Tôi cũng sẽ tập trung nhiều vào các kỹ năng giải quyết dữ liệu
+thực tế hơn là đi sâu vào các thuật toán cơ bản như đã từng làm.</p>
+<p>Khác với Machine Learning cơ bản, tôi có ý định viết một cuốn sách từ
+đầu trong dự án này. Format của website cũng khác rất nhiều với thông
+tin tối giản phục vụ cho việc trích xuất ra nhiều định dạng khác về sau
+(pdf, epub, mobi). Toàn bộ mã nguồn của cuốn sách có thể được tìm thấy
+tại <a class="reference external" href="https://github.com/tiepvupsu/tabml-book">https://github.com/tiepvupsu/tabml-book</a>.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Giới thiệu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="challenges.html">2. Dữ liệu dạng bảng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tabular_data.html">1. Dữ liệu dạng bảng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_cleaning.html">2. Làm sạch dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html">3. Các phương pháp xây dựng đặc trưng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#kham-pha-du-lieu">4. Khám phá dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#bo-quan-ly-dac-trung">5. Bộ quản lý đặc trưng</a></li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -479,16 +213,30 @@ a {
         </div>
         <div class="side-doc-outline">
             <div class="side-doc-outline--content"> 
+<div class="localtoc">
+    <p class="caption">
+      <span class="caption-text">Table Of Contents</span>
+    </p>
+    <ul>
+<li><a class="reference internal" href="#">Machine Learning cho dữ liệu dạng bảng</a></li>
+<li><a class="reference internal" href="#gioi-thieu">Giới thiệu</a><ul>
+<li><a class="reference internal" href="#muc-dich-cua-du-an">Mục đích của dự án</a></li>
+<li><a class="reference internal" href="#so-sanh-voi-machine-learning-co-ban">So sánh với Machine Learning cơ bản</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
             </div>
         </div>
 
       <div class="clearer"></div>
     </div><div class="pagenation">
-     <a id="button-next" href="intro.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
+     <a id="button-next" href="tabular_data.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="N">
          <i class="pagenation-arrow-R fas fa-arrow-right fa-lg"></i>
         <div class="pagenation-text">
             <span class="pagenation-direction">Next</span>
-            <div>1. Giới thiệu</div>
+            <div>1. Dữ liệu dạng bảng</div>
         </div>
      </a>
   </div>
