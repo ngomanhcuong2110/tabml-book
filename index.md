@@ -1,12 +1,6 @@
 Machine Learning cho dữ liệu dạng bảng
 ========================
 
-```eval_rst
-.. raw:: html
-   :file: frontpage.html
-```
-
-
 
 # Giới thiệu
 
@@ -68,4 +62,6 @@ sách có thể được tìm thấy tại
 :numbered:
 
 tabular_data
+data_cleaning
+feature_engineering
 ```
