@@ -1,60 +1,71 @@
-# Dữ liệu dạng bảng
+Machine Learning cho dữ liệu dạng bảng
+========================
 
-## Khó khăn khi làm việc với dữ liệu dạng bảng
-
-### Sự khan hiếm của dữ liệu dạng bảng
- 
-Một trong những đặc điểm của dữ liệu dạng bảng là khó khăn trong việc thu thập dữ liệu.
-Dữ liệu ảnh hay văn bản có thể được tìm kiếm dễ dàng qua các bộ dữ liệu được công khai
-trên mạng. Với dữ liệu bảng, mỗi công ty thường có dữ liệu và cách thu thập riêng; và
-quan trọng hơn, những dữ liệu này rất ít khi được công bố rộng rãi. Các công ty lớn có
-thể công bố thuật toán, mã nguồn của nghiều mô hình ML, nhưng dữ liệu mới là tài sản quý
-hơn cả. Việc khan hiếm của dữ liệu dạng bảng một phần dẫn đến sự thiếu hụt về các tài
-liệu cho dữ liệu loại này và cũng gián tiếp dẫn đến việc các thuật toán Deep Learning,
-vốn cần rất nhiều dữ liệu để huấn luyện, thường không mang lại kết quả tốt nhất.
-
-### Dữ liệu bị nhiễu hoặc khuyết
-
-Nhiều đặc trưng trong dữ liệu dạng bảng thường được thu thập bằng các phiếu khảo sát
-(điện tử hoặc thủ công). Chẳng hạn, khi người dùng tạo tài khoản ở một trang mạng, họ
-được yêu cầu nhập tên, tuổi, quê quán, vị trí địa lý, v.v; chuyện người dùng cố tình
-khai báo sai thông tin chắc chắn không phải là chuyện hiếm. Thậm chí, một người dùng có
-thể có nhiều tài khoản ảo với những thông tin trái ngược. Hoặc họ có thể đã từ chối cung
-cấp một loại thông tin nào đó, chẳng hạn tắt GPS, khiến trường thông tin đó bị khuyết.
-
-### Nhiều đặc trưng hạng mục
-
-Các mô hình ML, đặc biệt là các mô hình DL, thường hoạt động tốt khi dữ liệu đầu vào ở dạng số và liên tục. Dữ liệu ảnh, mặc dù
-nhận các giá trị số nguyên nhưng cũng có thể coi là liên tục với màu sắc thay đổi từ từ theo giá trị
-các điểm ảnh. Đầu vào của các mô hình NLP cũng thường là các embedding vector của các từ/câu/văn bản, các
-vector này là vector của các số thực liên tục. Các embedding gần nhau trong không gian cũng thường mang
-ý nghĩa gần nhau. Dữ liệu dạng bảng thường ít khi ở dưới dạng liên tục.
-
-Đặc trưng trong dữ liệu bảng có thể là một trong nhiều hạng mục khác nhau (_categorical data_).
-Chẳng hạn, nơi sinh của người dùng, tên của một loại sản phẩm hay mã của một phần quảng cáo là các loại đặc trưng ở dạng danh mục.
-Mặc dù vẫn có thể có các hạng mục mang ý nghĩa gần với nhau (ví dụ về mặt địa lý hoặc về mặt chủng loại), rất khó để đo đếm sự gần nhau đó.
-Hà Nội có thể rất xa Tp HCM và gần Hà Giang hơn, nhưng Hà Nội lại giống Tp HCM hơn theo nghĩa đều là các thành phố lớn.
-
-### Đặc trưng hạng mục có nhiều phần tử phân biệt
-
-Cách truyền thống để biến các đặc trưng hạng mục về dạng số là sử dụng phép biến đổi one-hot ^[là một vector].
-
-### Không thể áp dụng Transfer Learning
-
-Với dữ liệu ảnh hay văn bản, kể cả khi không có lượng dữ liệu đủ lớn, các kỹ sư ML vẫn
-có thể tạo ra các mô hình với chất lượng cao dựa trên kỹ thuật Transfer Learning.
-Kỹ thuật này 
-
-## Các phương pháp xây dựng đặc trưng
-
-## Impute dữ liệu bị khuyết
-
-```{python}
-from matplotlib import pyplot as plt
-plt.plot([1, 2, 3], [1, 4, 9])
+```eval_rst
+.. raw:: html
+   :file: frontpage.html
 ```
 
-```{python, results="hold"}
-print("Hello")
-print("World")
+
+
+# Giới thiệu
+
+## Mục đích của dự án
+
+Kể từ sau thành công của AlexNet trong cuộc thi ImageNet năm 2012, Machine Learning (ML)
+đã trở thành một chủ đề hấp dẫn đối với sinh viên và các kỹ sư công nghệ. Các tập đoàn
+lớn đổ dồn tài nguyên vào phát triển các trung tâm nghiên cứu và các hệ thống tính toán
+để giải quyết các bài toán kinh doanh cũng như thu hút nhân tài. Việc một trường đại học
+có thêm một khoa riêng về Trí Tuệ Nhân Tạo (AI) cũng không phải hiếm. Các blog, khoá
+học, seminar về AI cũng mọc lên như nấm.
+
+Nhắc tới ML, phần nhiều bạn đọc đồng nhất nó với Deep Learning (DL) vì vô số tài liệu
+hiện tại chỉ nói về nó mà ít đề cập tới lịch sử lâu dài của ngành ML. Nhắc tới Machine
+Learning, bạn có thể chỉ thấy các bài toán mà đầu vào là ảnh/video hoặc các loại văn
+bản. Bạn cũng có thể đã từng mày mò với các mã nguồn có sẵn với những bộ dữ liệu đã được
+làm sạch sẽ và tập trung nhiều vào thuật toán Machine Learning. Tuy nhiên, dữ liệu và
+bài toán thực tế khác rất nhiều so với những demo mà các bạn thường thấy. Để giải
+quyết các bài toán kinh doanh, các kỹ sư cần rất nhiều dữ liệu khác ngoài ảnh và văn
+bản.
+
+Ví dụ, trong bài toán gợi ý sản phẩm tới khách hàng, các thông số về sản phẩm và về
+khách hàng đóng vai trò vô cùng quan trọng. Ảnh sản phầm, nội dung comment chỉ là một
+phần rất nhỏ trong những dữ liệu có thể mang lại độ chính xác cao cho thuật toán. Trong
+một ví dụ khác về nhận diện kỳ quan, ngoài bức ảnh, các thông tin khác về người chụp, vị
+trí địa lý, loại máy, v.v. chắc chắn sẽ mang lại kết quả cao hơn cho các mô hình.
+
+Có những bài toán rất quan trọng mà ở đó các thông tin về hình ảnh và văn bản có thể
+không hề tồn tại, chẳng hạn bài toán dự đoán nợ xấu, bài toán dự đoán lượng mua để cân
+đối kho hàng hay bài toán dự đoán lưu lượng server trong ngày Tết để chuẩn bị lượng máy
+chủ cho phù hợp. Để giải quyết các bài toán này, các hệ thống ML cần nhiều thông tin
+khác nhau về mỗi đối tượng. Các thông tin này thường được lưu dưới dạng bảng và thường
+được gọi là **tabular data**. Đáng tiếc thay, Deep Learning không phải lúc nào cũng hoạt
+động tốt với dữ liệu dạng này (Đọc thêm [The Unreasonable Ineffectiveness of Deep Learning on Tabular Data](https://towardsdatascience.com/the-unreasonable-ineffectiveness-of-deep-learning-on-tabular-data-fd784ea29c33)).
+
+Các kỹ năng giải quyết các bài toán kinh doanh dựa trên dữ liệu dạng bảng này chưa được
+trình bày nhiều trong các tài liệu tiếng Việt. Dự án "Machine Learning cho dữ liệu dạng
+bảng" này được ra đời với mong muốn mang tới cho bạn đọc những kiến thức và kinh nghiệm
+mà cá nhân tôi thu được kể từ khi đi làm thực tế. Viết cũng là cách mà tôi thấy tốt nhất
+để củng cố lại kiến thức của bản thân.
+
+## So sánh với Machine Learning cơ bản
+
+So với [Machine Learning cơ bản](https://machinelearningcoban.com/), dự án này sẽ rất
+khác. Tôi sẽ không viết thành các bài dài và công bố mỗi một hoặc hai tuần như trước mà
+chia thành các mục ngắn và không thường xuyên chia sẻ. Tôi sẽ chỉ công bố rộng rãi khi
+hoàn thiện một chương. Tôi cũng sẽ tập trung nhiều vào các kỹ năng giải quyết dữ liệu
+thực tế hơn là đi sâu vào các thuật toán cơ bản như đã từng làm.
+
+Khác với Machine Learning cơ bản, tôi có ý định viết một cuốn sách từ đầu trong dự án
+này. Format của website cũng khác rất nhiều với thông tin tối giản phục vụ cho việc
+trích xuất ra nhiều định dạng khác về sau (pdf, epub, mobi). Toàn bộ mã nguồn của cuốn
+sách có thể được tìm thấy tại
+[https://github.com/tiepvupsu/tabml-book](https://github.com/tiepvupsu/tabml-book).
+
+
+```toc
+:maxdepth: 1
+:numbered:
+
+tabular_data
 ```
