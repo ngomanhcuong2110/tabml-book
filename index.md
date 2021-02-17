@@ -64,4 +64,5 @@ sách có thể được tìm thấy tại
 tabular_data
 data_cleaning
 feature_engineering
+titanic_data
 ```
