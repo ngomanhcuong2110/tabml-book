@@ -1,5 +1,5 @@
 # Làm sạch dữ liệu titanic
-```python
+```{.python .input}
 %%capture
 !rm -rf nb_data/titanic; mkdir -p nb_data/titanic
 !pip install kaggle;
@@ -10,7 +10,7 @@
 Unzip `titanic.zip`
 
 
-```python
+```{.python .input}
 !cd nb_data/titanic; unzip titanic.zip; cd ../../
 ```
 
@@ -18,7 +18,7 @@ Unzip `titanic.zip`
 Sau khi giải nén, thư mục `nb_data/titanic` có ba file `.csv` như trên. Trong ba file này, `train.csv` là dữ liệu dược dùng để huấn luyện, `test.csv` là dữ liệu cần dự đoán, và `gender_submision.csv` là file nộp kết quả mẫu.
 
 
-```python
+```{.python .input}
 import pandas as pd
 df_train = pd.read_csv("nb_data/titanic/train.csv")
 df_train.info()
@@ -33,7 +33,7 @@ Phương thức `.info()` trả về thông tin sơ bộ của `df_train`. Thôn
 Tiếp theo, để có cái nhìn nhanh về các trường dữ liệu dạng số, thuộc tính `describe()` được sử dụng:
 
 
-```python
+```{.python .input}
 df_train.describe()
 ```
 
