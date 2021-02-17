@@ -74,3 +74,4 @@ tại https://github.com/tiepvupsu/tabml-book.
    tabular_data
    data_cleaning
    feature_engineering
+   titanic_data

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>6. Làm sạch dữ liệu titanic &#8212; Machine Learning cho dữ liệu dạng bảng 0.0.1 documentation</title>
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/d2l.css" />
+    <link rel="stylesheet" href="_static/material-design-lite-1.3.0/material.blue-light_blue.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx_materialdesign_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fontawesome/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/fonts.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/d2l.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3. Các phương pháp xây dựng đặc trưng" href="feature_engineering.html" /> 
+  </head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer"><header class="mdl-layout__header mdl-layout__header--waterfall ">
+    <div class="mdl-layout__header-row">
+        
+        <nav class="mdl-navigation breadcrumb">
+            <a class="mdl-navigation__link is-active"><span class="section-number">6. </span>Làm sạch dữ liệu titanic</a>
+        </nav>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+        
+<form class="form-inline pull-sm-right" action="search.html" method="get">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label id="quick-search-icon" class="mdl-button mdl-js-button mdl-button--icon"  for="waterfall-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q"  id="waterfall-exp" placeholder="Search" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </div>
+      </div>
+      <div class="mdl-tooltip" data-mdl-for="quick-search-icon">
+      Quick search
+      </div>
+</form>
+        
+<a id="button-show-source"
+    class="mdl-button mdl-js-button mdl-button--icon"
+    href="_sources/titanic_data.rst.txt" rel="nofollow">
+  <i class="material-icons">code</i>
+</a>
+<div class="mdl-tooltip" data-mdl-for="button-show-source">
+Show Source
+</div>
+        </nav>
+    </div>
+    <div class="mdl-layout__header-row header-links">
+      <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
+          
+              <a  class="mdl-navigation__link" href="https://github.com/tiepvupsu/tabml-book">
+                  <i class="fab fa-github"></i>
+                  GitHub
+              </a>
+      </nav>
+    </div>
+</header><header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <img class="logo" src="_static/logo-with-text-vi.png" alt="Machine Learning cho dữ liệu dạng bảng"/>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tabular_data.html">1. Dữ liệu dạng bảng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_cleaning.html">2. Làm sạch dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html">3. Các phương pháp xây dựng đặc trưng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#kham-pha-du-lieu">4. Khám phá dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#bo-quan-ly-dac-trung">5. Bộ quản lý đặc trưng</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Làm sạch dữ liệu titanic</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+        <main class="mdl-layout__content" tabIndex="0">
+
+	<script type="text/javascript" src="_static/sphinx_materialdesign_theme.js "></script>
+    <header class="mdl-layout__drawer">
+    
+          <!-- Title -->
+      <span class="mdl-layout-title">
+          <a class="title" href="index.html">
+              <img class="logo" src="_static/logo-with-text-vi.png" alt="Machine Learning cho dữ liệu dạng bảng"/>
+          </a>
+      </span>
+    
+    
+      <div class="globaltoc">
+        <span class="mdl-layout-title toc">Table Of Contents</span>
+        
+        
+            
+            <nav class="mdl-navigation">
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tabular_data.html">1. Dữ liệu dạng bảng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_cleaning.html">2. Làm sạch dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html">3. Các phương pháp xây dựng đặc trưng</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#kham-pha-du-lieu">4. Khám phá dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_engineering.html#bo-quan-ly-dac-trung">5. Bộ quản lý đặc trưng</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Làm sạch dữ liệu titanic</a></li>
+</ul>
+
+            </nav>
+        
+        </div>
+    
+</header>
+
+    <div class="document">
+        <div class="page-content" role="main">
+        
+  <div class="section" id="lam-sach-du-lieu-titanic">
+<h1><span class="section-number">6. </span>Làm sạch dữ liệu titanic<a class="headerlink" href="#lam-sach-du-lieu-titanic" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%%capture
+!rm -rf nb_data/titanic; mkdir -p nb_data/titanic
+!pip install kaggle;
+!kaggle competitions download -c titanic -p nb_data/titanic;
+</pre></div>
+</div>
+<p>Unzip <code class="docutils literal notranslate"><span class="pre">titanic.zip</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cd nb_data/titanic; unzip titanic.zip; cd ../../
+</pre></div>
+</div>
+<p>Sau khi giải nén, thư mục <code class="docutils literal notranslate"><span class="pre">nb_data/titanic</span></code> có ba file <code class="docutils literal notranslate"><span class="pre">.csv</span></code> như
+trên. Trong ba file này, <code class="docutils literal notranslate"><span class="pre">train.csv</span></code> là dữ liệu dược dùng để huấn
+luyện, <code class="docutils literal notranslate"><span class="pre">test.csv</span></code> là dữ liệu cần dự đoán, và <code class="docutils literal notranslate"><span class="pre">gender_submision.csv</span></code>
+là file nộp kết quả mẫu.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;nb_data/titanic/train.csv&quot;</span><span class="p">)</span>
+<span class="n">df_train</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Phương thức <code class="docutils literal notranslate"><span class="pre">.info()</span></code> trả về thông tin sơ bộ của <code class="docutils literal notranslate"><span class="pre">df_train</span></code>. Thông
+tin cụ thể về từng trường dữ liệu có thể tìm thấy tại trang <a class="reference external" href="https://www.kaggle.com/c/titanic/data">dữ liệu
+cuộc thi</a>. Từ kết quả bên trên
+ta thấy được:</p>
+<ol class="arabic simple">
+<li><p>Có 891 điểm dữ liệu (891 hàng).</p></li>
+<li><p>Các trường <code class="docutils literal notranslate"><span class="pre">Age,</span> <span class="pre">Cabin,</span> <span class="pre">Embarked</span></code> có ít hơn 891 giá trị
+<code class="docutils literal notranslate"><span class="pre">Non-Null</span></code>. Điều này có nghĩa là các trường này có dữ liệu bị
+khuyết.</p></li>
+<li><p>Các trường <code class="docutils literal notranslate"><span class="pre">Name,</span> <span class="pre">Sex,</span> <span class="pre">Ticket,</span> <span class="pre">Cabin,</span> <span class="pre">Embarked</span></code> có kiểu dữ liệu
+<code class="docutils literal notranslate"><span class="pre">Dtype</span></code> là <code class="docutils literal notranslate"><span class="pre">object</span></code>, tức các trường này được lưu ở dạng
+<code class="docutils literal notranslate"><span class="pre">string</span></code>. Các trường còn lại có giá trị là số nguyên (<code class="docutils literal notranslate"><span class="pre">int64</span></code>)
+hoặc số thực (<code class="docutils literal notranslate"><span class="pre">float64</span></code>). Chú ý rằng chúng ta không nên ngầm hiểu
+các trường này thực sự có ý nghĩa là số, ở đây vì chúng ta không chỉ
+rõ kiểu dữ liệu khi đọc file <code class="docutils literal notranslate"><span class="pre">.csv</span></code> bằng <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> nên
+<code class="docutils literal notranslate"><span class="pre">pandas</span></code> tự suy ra kiểu dữ liệu. Trong bộ dữ liệu này mỗi
+<code class="docutils literal notranslate"><span class="pre">PasengerId</span></code> là một mã hành khách, có thể là một giá trị bất kỳ
+không lặp lại. Chúng ta cần xác định rõ kiểu của từng trường dữ liệu,
+mô hình ML thường có những cách xử lý khác nhau giữa kiểu dữ liệu
+dạng số và dạng hạng mục.</p></li>
+</ol>
+<p>Tiếp theo, để có cái nhìn nhanh về các trường dữ liệu dạng số, thuộc
+tính <code class="docutils literal notranslate"><span class="pre">describe()</span></code> được sử dụng:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Kết quả trả về giúp chúng ta có cái nhìn khái quát về phân phối của các
+trường dữ liệu dạng số. Một vài quan sát:</p>
+<ol class="arabic simple">
+<li><p>Cột <code class="docutils literal notranslate"><span class="pre">Survived</span></code> là cột chứa nhãn của mỗi hàng. Giá trị nhỏ nhất bằng
+0 và giá trị lớn nhất bằng 1, cùng với việc kiểu dữ liệu là
+<code class="docutils literal notranslate"><span class="pre">int64</span></code>, ta có thể nói rằng kiểu dữ liệu của trường này là nhị phân
+[^1]. Ở đây, giá trị <code class="docutils literal notranslate"><span class="pre">1</span></code> mang nghĩa là sống sót và <code class="docutils literal notranslate"><span class="pre">0</span></code> mang nghĩa
+ngược lại. Giá trị trung bình <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">=</span> <span class="pre">0.3838</span></code> cũng giúp chỉ ra rằng
+khoảng 38.4% dữ liệu thuộc class <code class="docutils literal notranslate"><span class="pre">1</span></code> so với khoảng 61.6% dữ liệu
+thuộc class <code class="docutils literal notranslate"><span class="pre">0</span></code>. Dữ liệu có bị lệch nhưng không quá nghiêm trọng.</p></li>
+<li><p>Cột</p></li>
+</ol>
+<p>[^1] Khi không xác định rõ kiểu dữ liệu, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> tự chuyển kiểu nhị
+phân về <code class="docutils literal notranslate"><span class="pre">int64</span></code>, số thực về <code class="docutils literal notranslate"><span class="pre">float64</span></code>. Với các tập dữ liệu lớn, việc
+không xác định rõ kiểu khi đọc dữ liệu có thể dẫn tới tình trạng tràn bộ
+nhớ.</p>
+</div>
+
+
+        </div>
+        <div class="side-doc-outline">
+            <div class="side-doc-outline--content"> 
+            </div>
+        </div>
+
+      <div class="clearer"></div>
+    </div><div class="pagenation">
+     <a id="button-prev" href="feature_engineering.html" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" role="botton" accesskey="P">
+         <i class="pagenation-arrow-L fas fa-arrow-left fa-lg"></i>
+         <div class="pagenation-text">
+            <span class="pagenation-direction">Previous</span>
+            <div>3. Các phương pháp xây dựng đặc trưng</div>
+         </div>
+     </a>
+  </div>
+        
+        </main>
+    </div>
+  </body>
+</html>
