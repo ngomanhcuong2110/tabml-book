@@ -1,9 +1,9 @@
 # Làm sạch dữ liệu titanic
 ```{.python .input}
 %%capture
-!rm -rf nb_data/titanic; mkdir -p nb_data/titanic
+!rm -rf ./nb_data/titanic; mkdir -p ./nb_data/titanic
 !pip install kaggle;
-!kaggle competitions download -c titanic -p nb_data/titanic;
+!kaggle competitions download -c titanic -p ./nb_data/titanic;
 
 ```
 
@@ -15,12 +15,12 @@ Unzip `titanic.zip`
 ```
 
 
-Sau khi giải nén, thư mục `nb_data/titanic` có ba file `.csv` như trên. Trong ba file này, `train.csv` là dữ liệu dược dùng để huấn luyện, `test.csv` là dữ liệu cần dự đoán, và `gender_submision.csv` là file nộp kết quả mẫu.
+Sau khi giải nén, thư mục `./nb_data/titanic` có ba file `.csv` như trên. Trong ba file này, `train.csv` là dữ liệu dược dùng để huấn luyện, `test.csv` là dữ liệu cần dự đoán, và `gender_submision.csv` là file nộp kết quả mẫu.
 
 
 ```{.python .input}
 import pandas as pd
-df_train = pd.read_csv("nb_data/titanic/train.csv")
+df_train = pd.read_csv("./nb_data/titanic/train.csv")
 df_train.info()
 ```
 
