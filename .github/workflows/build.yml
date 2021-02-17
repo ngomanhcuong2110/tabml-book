@@ -25,6 +25,7 @@ jobs:
          cd tool
          python setup.py install
          cd ..
+         pip install -r requirements.txt
          rm -rf _build
          tabtool build html
 
