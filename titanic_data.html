@@ -143,22 +143,50 @@ Show Source
   <div class="section" id="lam-sach-du-lieu-titanic">
 <h1><span class="section-number">6. </span>Làm sạch dữ liệu titanic<a class="headerlink" href="#lam-sach-du-lieu-titanic" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>%%capture
-!rm -rf nb_data/titanic; mkdir -p nb_data/titanic
+!rm -rf ./nb_data/titanic; mkdir -p ./nb_data/titanic
 !pip install kaggle;
-!kaggle competitions download -c titanic -p nb_data/titanic;
+!kaggle competitions download -c titanic -p ./nb_data/titanic;
 </pre></div>
 </div>
 <p>Unzip <code class="docutils literal notranslate"><span class="pre">titanic.zip</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!cd nb_data/titanic; unzip titanic.zip; cd ../../
 </pre></div>
 </div>
-<p>Sau khi giải nén, thư mục <code class="docutils literal notranslate"><span class="pre">nb_data/titanic</span></code> có ba file <code class="docutils literal notranslate"><span class="pre">.csv</span></code> như
+<div class="output highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Archive</span><span class="p">:</span>  <span class="n">titanic</span><span class="o">.</span><span class="n">zip</span>
+  <span class="n">inflating</span><span class="p">:</span> <span class="n">gender_submission</span><span class="o">.</span><span class="n">csv</span>
+  <span class="n">inflating</span><span class="p">:</span> <span class="n">test</span><span class="o">.</span><span class="n">csv</span>
+  <span class="n">inflating</span><span class="p">:</span> <span class="n">train</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+<p>Sau khi giải nén, thư mục <code class="docutils literal notranslate"><span class="pre">./nb_data/titanic</span></code> có ba file <code class="docutils literal notranslate"><span class="pre">.csv</span></code> như
 trên. Trong ba file này, <code class="docutils literal notranslate"><span class="pre">train.csv</span></code> là dữ liệu dược dùng để huấn
 luyện, <code class="docutils literal notranslate"><span class="pre">test.csv</span></code> là dữ liệu cần dự đoán, và <code class="docutils literal notranslate"><span class="pre">gender_submision.csv</span></code>
 là file nộp kết quả mẫu.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;nb_data/titanic/train.csv&quot;</span><span class="p">)</span>
+
+<span class="n">df_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./nb_data/titanic/train.csv&quot;</span><span class="p">)</span>
 <span class="n">df_train</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="output highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 12 columns):
+ #   Column       Non-Null Count  Dtype
+---  ------       --------------  -----
+ 0   PassengerId  891 non-null    int64
+ 1   Survived     891 non-null    int64
+ 2   Pclass       891 non-null    int64
+ 3   Name         891 non-null    object
+ 4   Sex          891 non-null    object
+ 5   Age          714 non-null    float64
+ 6   SibSp        891 non-null    int64
+ 7   Parch        891 non-null    int64
+ 8   Ticket       891 non-null    object
+ 9   Fare         891 non-null    float64
+ 10  Cabin        204 non-null    object
+ 11  Embarked     889 non-null    object
+dtypes: float64(2), int64(5), object(5)
+memory usage: 83.7+ KB
 </pre></div>
 </div>
 <p>Phương thức <code class="docutils literal notranslate"><span class="pre">.info()</span></code> trả về thông tin sơ bộ của <code class="docutils literal notranslate"><span class="pre">df_train</span></code>. Thông
@@ -187,7 +215,117 @@ tính <code class="docutils literal notranslate"><span class="pre">describe()</s
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_train</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Kết quả trả về giúp chúng ta có cái nhìn khái quát về phân phối của các
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>891.000000</td>
+      <td>891.000000</td>
+      <td>891.000000</td>
+      <td>714.000000</td>
+      <td>891.000000</td>
+      <td>891.000000</td>
+      <td>891.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>446.000000</td>
+      <td>0.383838</td>
+      <td>2.308642</td>
+      <td>29.699118</td>
+      <td>0.523008</td>
+      <td>0.381594</td>
+      <td>32.204208</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>257.353842</td>
+      <td>0.486592</td>
+      <td>0.836071</td>
+      <td>14.526497</td>
+      <td>1.102743</td>
+      <td>0.806057</td>
+      <td>49.693429</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>0.420000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>223.500000</td>
+      <td>0.000000</td>
+      <td>2.000000</td>
+      <td>20.125000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>7.910400</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>446.000000</td>
+      <td>0.000000</td>
+      <td>3.000000</td>
+      <td>28.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>14.454200</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>668.500000</td>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>38.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>31.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>891.000000</td>
+      <td>1.000000</td>
+      <td>3.000000</td>
+      <td>80.000000</td>
+      <td>8.000000</td>
+      <td>6.000000</td>
+      <td>512.329200</td>
+    </tr>
+  </tbody>
+</table>
+</div><p>Kết quả trả về giúp chúng ta có cái nhìn khái quát về phân phối của các
 trường dữ liệu dạng số. Một vài quan sát:</p>
 <ol class="arabic simple">
 <li><p>Cột <code class="docutils literal notranslate"><span class="pre">Survived</span></code> là cột chứa nhãn của mỗi hàng. Giá trị nhỏ nhất bằng
